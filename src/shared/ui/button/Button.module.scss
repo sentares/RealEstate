@@ -1,0 +1,105 @@
+.Button {
+	cursor: pointer;
+	color: var(--primary-color);
+	padding: 6px 15px;
+	transition: 0.3s;
+}
+
+.outline {
+	background: none;
+	color: var(--fill-primary);
+	border-radius: 6px;
+	border: 2px solid var(--fill-primary);
+	transition: transform 0.3s, box-shadow 0.3s;
+	&:hover {
+		transform: translate(-1px, -1px);
+		box-shadow: 2px 2px 0px 0px rgba(55, 50, 86, 0.81);
+	}
+	&:active {
+		transform: translate(0px);
+		background: var(--fill-primary);
+		color: #ffffff;
+		box-shadow: rgba(51, 0, 255, 0.25) 0px 2px 4px 0px inset;
+	}
+}
+
+.outlineOrange {
+	background: none;
+	color: var(--fill-secondary);
+	border-radius: 6px;
+	border: 2px solid var(--fill-secondary);
+	transition: transform 0.3s, box-shadow 0.3s;
+	&:hover {
+		transform: translate(-1px, -1px);
+		box-shadow: 2px 2px 0px 0px rgba(241, 187, 147, 0.81);
+	}
+	&:active {
+		transform: translate(0px);
+		background: var(--fill-secondary);
+		color: #ffffff;
+		box-shadow: rgba(255, 199, 0, 0.25) 0px 2px 4px 0px inset;
+	}
+}
+
+.background {
+	background: var(--fill-primary);
+	color: #ffffff;
+	border: none;
+	transition: transform 0.3s, box-shadow 0.3s;
+	&:hover {
+		transform: translate(-1px, -1px);
+		box-shadow: 2px 2px 0px 0px rgba(0, 0, 0, 0.7);
+	}
+	&:active {
+		transform: translate(0px);
+		box-shadow: 8px 8px 25px 0px rgba(51, 0, 255, 0.25) inset,
+			-8px -8px 25px 0px rgba(51, 0, 255, 0.25) inset;
+	}
+}
+
+.backgroundOrange {
+	background: var(--fill-secondary);
+	color: #ffffff;
+	border: none;
+	transition: transform 0.3s, box-shadow 0.3s;
+	&:hover {
+		transform: translate(-1px, -1px);
+		box-shadow: 2px 2px 0px 0px rgba(241, 187, 147, 0.81);
+	}
+	&:active {
+		transform: translate(0px);
+		box-shadow: 8px 8px 25px 0px rgba(255, 199, 0, 0.25) inset,
+			-8px -8px 25px 0px #ffc700 inset;
+	}
+}
+
+.size_s {
+	padding: 8px 16px;
+	border-radius: 6px;
+	font-weight: 500;
+	transition: all 0.3s;
+	letter-spacing: 0.42px;
+	font-size: 14px;
+}
+
+.size_m {
+	padding: 10.8px 16px;
+	border-radius: 6px;
+	font-weight: 500;
+	transition: all 0.3s;
+	letter-spacing: 0.48px;
+	font-size: 16px;
+}
+
+.size_l {
+	padding: 13.8px 16px;
+	border-radius: 6px;
+	font-weight: 500;
+	transition: all 0.3s;
+	letter-spacing: 0.54px;
+	font-size: 18px;
+}
+
+.disabled {
+	opacity: 0.5;
+}
