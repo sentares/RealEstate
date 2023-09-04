@@ -2,5 +2,7 @@
 	display: flex;
 	align-items: center;
 	gap: 18px;
-	margin: 10px;
+	.butt {
+		background: var(--primary-color);
+	}
 }

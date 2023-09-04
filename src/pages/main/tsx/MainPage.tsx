@@ -3,6 +3,7 @@ import { Button, ButtonSize, ButtonTheme } from 'shared/ui/button/Button'
 import cls from './MainPage.module.scss'
 import { useTranslation } from 'react-i18next'
 import { LangSwitcher } from 'shared/switchers/language-switcher/LanguageSwitcher'
+import { ThemeSwitcher } from 'shared/switchers/theme-switcher/ThemeSwitcher'
 
 const Main = () => {
 	const { t } = useTranslation()
@@ -14,11 +15,13 @@ const Main = () => {
 	return (
 		<div className={cls.main}>
 			<LangSwitcher />
+			<ThemeSwitcher />
 			<Button
 				theme={ButtonTheme.BACKGROUND}
 				size={ButtonSize.S}
 				disabled={dis}
 				onClick={clickButt}
+				className={cls.butt}
 			>
 				{t('Обычный')}
 			</Button>
@@ -28,7 +31,7 @@ const Main = () => {
 				disabled={dis}
 				onClick={clickButt}
 			>
-				Orange
+				{t('Оранжевый')}
 			</Button>
 			<Button
 				theme={ButtonTheme.BACKGROUND}
