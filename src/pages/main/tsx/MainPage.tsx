@@ -1,8 +1,11 @@
 import { useState } from 'react'
 import { Button, ButtonSize, ButtonTheme } from 'shared/ui/button/Button'
 import cls from './MainPage.module.scss'
+import { useTranslation } from 'react-i18next'
+import { LangSwitcher } from 'shared/switchers/language-switcher/LanguageSwitcher'
 
 const Main = () => {
+	const { t } = useTranslation()
 	const [dis, setDis] = useState(false)
 	const clickButt = () => {
 		setDis(!dis)
@@ -10,13 +13,14 @@ const Main = () => {
 
 	return (
 		<div className={cls.main}>
+			<LangSwitcher />
 			<Button
 				theme={ButtonTheme.BACKGROUND}
 				size={ButtonSize.S}
 				disabled={dis}
 				onClick={clickButt}
 			>
-				Primary
+				{t('Обычный')}
 			</Button>
 			<Button
 				theme={ButtonTheme.BACKGROUND_ORANGE}
