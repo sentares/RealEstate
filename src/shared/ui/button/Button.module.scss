@@ -1,81 +1,107 @@
 .Button {
 	cursor: pointer;
-	color: var(--primary-color);
+	color: var(--bg-color);
 	padding: 6px 15px;
 	transition: 0.3s;
+	border-radius: 10px;
+}
+
+.filed {
+	display: flex;
+	padding: 10px 24px;
+	justify-content: center;
+	align-items: center;
+	gap: 8px;
+	flex: 1 0 0;
+	align-self: stretch;
+	color: var(--material-theme-sys-on-primary);
+	background: var(--material-theme-sys-primary);
+	border: 0px;
+	&:hover {
+		box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15),
+			0px 1px 2px 0px rgba(0, 0, 0, 0.3);
+		scale: 1.02;
+		opacity: 0.95;
+	}
 }
 
 .outline {
+	display: flex;
+	padding: 10px 24px;
+	justify-content: center;
+	align-items: center;
+	gap: 8px;
+	flex: 1 0 0;
+	align-self: stretch;
+	color: var(--material-theme-sys-primary);
 	background: none;
-	color: var(--fill-primary);
-	border-radius: 6px;
-	border: 2px solid var(--fill-primary);
-	transition: transform 0.3s, box-shadow 0.3s;
+	border: 1px solid var(--material-theme-sys-outline);
 	&:hover {
-		transform: translate(-1px, -1px);
-		box-shadow: 2px 2px 0px 0px rgba(55, 50, 86, 0.81);
+		background: var(--material-theme-state-layers-sys-primary-opacity-008);
+		scale: 1.02;
 	}
 	&:active {
-		transform: translate(0px);
-		background: var(--fill-primary);
-		color: #ffffff;
-		box-shadow: rgba(51, 0, 255, 0.25) 0px 2px 4px 0px inset;
+		scale: 0.98;
 	}
 }
 
-.outlineOrange {
-	background: none;
-	color: var(--fill-secondary);
-	border-radius: 6px;
-	border: 2px solid var(--fill-secondary);
-	transition: transform 0.3s, box-shadow 0.3s;
+.text {
+	display: flex;
+	padding: 10px 12px;
+	justify-content: center;
+	align-items: center;
+	gap: 8px;
+	flex: 1 0 0;
+	align-self: stretch;
+	color: var(--material-theme-sys-primary);
+	border: 0px;
+	background: var(--bg-color);
 	&:hover {
-		transform: translate(-1px, -1px);
-		box-shadow: 2px 2px 0px 0px rgba(241, 187, 147, 0.81);
+		background: var(--material-theme-state-layers-sys-primary-opacity-008);
+		transform: scale(1.02);
 	}
 	&:active {
-		transform: translate(0px);
-		background: var(--fill-secondary);
-		color: #ffffff;
-		box-shadow: rgba(255, 199, 0, 0.25) 0px 2px 4px 0px inset;
+		transform: scale(0.98);
 	}
 }
 
-.background {
-	background: var(--fill-primary);
-	color: #ffffff;
-	border: none;
-	transition: transform 0.3s, box-shadow 0.3s;
-	&:hover {
-		transform: translate(-1px, -1px);
-		box-shadow: 2px 2px 0px 0px rgba(0, 0, 0, 0.7);
-	}
-	&:active {
-		transform: translate(0px);
-		box-shadow: 8px 8px 25px 0px rgba(51, 0, 255, 0.25) inset,
-			-8px -8px 25px 0px rgba(51, 0, 255, 0.25) inset;
-	}
+.elevant {
+	display: inline-flex;
+	height: 40px;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 8px;
+	flex-shrink: 0;
+	border: 0px;
+	color: var(--material-theme-sys-primary);
+	background: var(--material-theme-sys-surface-container-low);
+	box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15),
+		0px 1px 2px 0px rgba(0, 0, 0, 0.3);
 }
 
-.backgroundOrange {
-	background: var(--fill-secondary);
-	color: #ffffff;
-	border: none;
-	transition: transform 0.3s, box-shadow 0.3s;
+.tonal {
+	display: flex;
+	padding: 10px 24px;
+	justify-content: center;
+	align-items: center;
+	gap: 8px;
+	flex: 1 0 0;
+	align-self: stretch;
+	border: 0px;
+	background: var(--material-theme-sys-secondary-container);
+	color: var(--material-theme-sys-on-secondary-container);
 	&:hover {
-		transform: translate(-1px, -1px);
-		box-shadow: 2px 2px 0px 0px rgba(241, 187, 147, 0.81);
+		transform: scale(1.02);
 	}
 	&:active {
-		transform: translate(0px);
-		box-shadow: 8px 8px 25px 0px rgba(255, 199, 0, 0.25) inset,
-			-8px -8px 25px 0px #ffc700 inset;
+		transform: scale(0.98);
 	}
 }
 
 .size_s {
 	padding: 8px 16px;
-	border-radius: 6px;
+	// border-radius: 6px;
 	font-weight: 500;
 	transition: all 0.3s;
 	letter-spacing: 0.42px;
@@ -84,7 +110,7 @@
 
 .size_m {
 	padding: 10.8px 16px;
-	border-radius: 6px;
+	// border-radius: 6px;
 	font-weight: 500;
 	transition: all 0.3s;
 	letter-spacing: 0.48px;
@@ -93,7 +119,7 @@
 
 .size_l {
 	padding: 13.8px 16px;
-	border-radius: 6px;
+	// border-radius: 6px;
 	font-weight: 500;
 	transition: all 0.3s;
 	letter-spacing: 0.54px;

@@ -4,24 +4,24 @@ import { Button, ButtonTheme } from 'shared/ui/button/Button'
 import cls from './LanguageSwitcher.module.scss'
 
 interface LangSwitcherProps {
- className?: string
+	className?: string
 }
 
 export const LangSwitcher = ({ className }: LangSwitcherProps) => {
-  const { t, i18n } = useTranslation()
+	const { t, i18n } = useTranslation()
 
-  const toggle = async () => {
-    i18n.changeLanguage(i18n.language === 'ru' ? 'en' : 'ru')
-    console.log('switch')
-  }
+	const toggle = async () => {
+		i18n.changeLanguage(i18n.language === 'ru' ? 'en' : 'ru')
+		console.log('switch')
+	}
 
-  return (
-    <Button
-      className={classNames(cls.LangSwitcher, {}, [className])}
-      theme={ButtonTheme.OUTLINE}
-      onClick={toggle}
-    >
-      {t('Язык')}
-    </Button>
-  )
+	return (
+		<Button
+			className={classNames(cls.LangSwitcher, {}, [className])}
+			theme={ButtonTheme.TONAL}
+			onClick={toggle}
+		>
+			{t('Язык')}
+		</Button>
+	)
 }

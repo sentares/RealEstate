@@ -14,10 +14,11 @@ const Main = () => {
 
 	return (
 		<div className={cls.main}>
-			<LangSwitcher />
-			<ThemeSwitcher />
+			<LangSwitcher className={cls.butt} />
+			<ThemeSwitcher className={cls.butt} />
+
 			<Button
-				theme={ButtonTheme.BACKGROUND}
+				theme={ButtonTheme.FILED}
 				size={ButtonSize.S}
 				disabled={dis}
 				onClick={clickButt}
@@ -26,44 +27,40 @@ const Main = () => {
 				{t('Обычный')}
 			</Button>
 			<Button
-				theme={ButtonTheme.BACKGROUND_ORANGE}
-				size={ButtonSize.M}
-				disabled={dis}
-				onClick={clickButt}
-			>
-				{t('Оранжевый')}
-			</Button>
-			<Button
-				theme={ButtonTheme.BACKGROUND}
-				size={ButtonSize.L}
-				disabled={dis}
-				onClick={clickButt}
-			>
-				Orange
-			</Button>
-			<Button
-				theme={ButtonTheme.OUTLINE_ORANGE}
-				size={ButtonSize.L}
-				disabled={dis}
-				onClick={clickButt}
-			>
-				Orange
-			</Button>
-			<Button
-				theme={ButtonTheme.OUTLINE}
-				size={ButtonSize.M}
-				disabled={dis}
-				onClick={clickButt}
-			>
-				Orange
-			</Button>
-			<Button
 				theme={ButtonTheme.OUTLINE}
 				size={ButtonSize.S}
 				disabled={dis}
 				onClick={clickButt}
+				className={cls.butt}
 			>
-				Orange
+				{t('Обычный')}
+			</Button>
+			<Button
+				theme={ButtonTheme.TEXT}
+				size={ButtonSize.S}
+				disabled={dis}
+				onClick={clickButt}
+				className={cls.butt}
+			>
+				{t('Обычный')}
+			</Button>
+			<Button
+				theme={ButtonTheme.ELEVANT}
+				size={ButtonSize.S}
+				disabled={dis}
+				onClick={clickButt}
+				className={cls.butt}
+			>
+				{t('Обычный')}
+			</Button>
+			<Button
+				theme={ButtonTheme.TONAL}
+				size={ButtonSize.S}
+				disabled={dis}
+				onClick={clickButt}
+				className={cls.butt}
+			>
+				{t('Обычный')}
 			</Button>
 		</div>
 	)
