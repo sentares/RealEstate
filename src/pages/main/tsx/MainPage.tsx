@@ -5,6 +5,7 @@ import { ThemeSwitcher } from 'shared/switchers/theme-switcher/ThemeSwitcher'
 import { Button, ButtonSize, ButtonTheme } from 'shared/ui/button/Button'
 import Switcher, { SwitcherTheme } from 'shared/ui/switcher/Switcher'
 import cls from './MainPage.module.scss'
+import { X } from 'lucide-react'
 
 const Main = () => {
 	const { t } = useTranslation()
@@ -80,6 +81,7 @@ const Main = () => {
 				handleToggle={handleSwicth}
 				disabled={false}
 				theme={SwitcherTheme.COLORED}
+				icon={true}
 			/>
 		</div>
 	)

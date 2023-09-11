@@ -2,6 +2,7 @@ import { ReactNode, useContext } from 'react'
 import cls from './Switcher.module.scss'
 import { classNames, type Mods } from 'shared/lib/classNames/classNames'
 import { ThemeContext } from 'app/providers/themes/lib/ThemeContext'
+import { Camera, Check, X } from 'lucide-react'
 
 export enum SwitcherTheme {
 	COLORED = 'colored',
@@ -57,7 +58,14 @@ const Switcher = (props: SwitcherProps) => {
 					className={classNames(cls.SwitchButton, {
 						[cls.colored]: isOn,
 					})}
-				/>
+				>
+					{!isOn && icon && (
+						<X width={16} height={16} color={initialLabelColor} />
+					)}
+					{isOn && icon && (
+						<Check width={16} height={16} className={cls.iconDone} />
+					)}
+				</span>
 			</label>
 		</>
 	)
