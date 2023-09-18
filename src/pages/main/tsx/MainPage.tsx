@@ -1,13 +1,19 @@
-import { useState } from 'react'
+import { getRealty } from 'entities/realty/selectors/getRealty'
+import { getRealtyService } from 'entities/realty/service/RealtyService'
+import { useCallback, useState } from 'react'
 import { useTranslation } from 'react-i18next'
+import { useSelector } from 'react-redux'
+import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch'
 import { LangSwitcher } from 'shared/switchers/language-switcher/LanguageSwitcher'
 import { ThemeSwitcher } from 'shared/switchers/theme-switcher/ThemeSwitcher'
 import { Button, ButtonSize, ButtonTheme } from 'shared/ui/button/Button'
 import Switcher, { SwitcherTheme } from 'shared/ui/switcher/Switcher'
 import cls from './MainPage.module.scss'
-import { X } from 'lucide-react'
 
 const Main = () => {
+	const data = useSelector(getRealty)
+	console.log(data)
+
 	const { t } = useTranslation()
 	const [dis, setDis] = useState(false)
 	const clickButt = () => {
@@ -19,7 +25,16 @@ const Main = () => {
 		setValue(!value)
 	}
 
-	console.log(value)
+	const dispatch = useAppDispatch()
+
+	const onLoginClick = useCallback(async () => {
+		try {
+			await dispatch(getRealtyService(null))
+			console.log('all good')
+		} catch (error) {
+			console.error('Error:', error)
+		}
+	}, [dispatch])
 
 	return (
 		<div className={cls.main}>
@@ -29,7 +44,7 @@ const Main = () => {
 				theme={ButtonTheme.FILED}
 				size={ButtonSize.S}
 				disabled={dis}
-				onClick={clickButt}
+				onClick={onLoginClick}
 				className={cls.butt}
 			>
 				{t('Обычный')}
