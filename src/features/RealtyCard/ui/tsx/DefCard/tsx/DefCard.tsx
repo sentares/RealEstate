@@ -1,4 +1,4 @@
-import { Button, ButtonTheme } from 'shared/ui/button/Button'
+import { Button, ButtonSize, ButtonTheme } from 'shared/ui/button/Button'
 import cls from './DefCard.module.scss'
 import { Phone } from 'lucide-react'
 const DefCard = () => {
@@ -13,12 +13,15 @@ const DefCard = () => {
 			</div>
 			<div className={cls.infoBlock}>
 				<div className={cls.info}>
-					<h2>250 000 тг</h2>
-					<p>2-комнт.кв | 68 м2 | 4/12 эт. </p>
-					<p>ЖК Айва, ул. Акбулак 22, р-н Нура</p>
+					<p className={cls.price}>250 000 тг</p>
+					<p className={cls.dataInf}>
+						<label className={cls.rooms}>2-комнт.кв |</label> 68 м2 <>|</> 4/12
+						эт.{' '}
+					</p>
+					<p className={cls.street}>ЖК Айва, ул. Акбулак 22, р-н Нура</p>
 				</div>
 				<Button className={cls.call} theme={ButtonTheme.OUTLINE}>
-					<Phone className={cls.phone} />
+					<Phone className={cls.phone} size={'14px'} />
 					Позвонить
 				</Button>
 			</div>

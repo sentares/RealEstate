@@ -9,7 +9,7 @@ const Main = () => {
 
 	return (
 		<div className={cls.main}>
-			<ThemeSwitcher />
+			<ThemeSwitcher className={cls.themeSwitch} />
 			<div>
 				<DefCard />
 			</div>
