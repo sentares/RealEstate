@@ -10,7 +10,8 @@
 	transition: all 0.3s;
 	&:hover {
 		scale: 1.004;
-		box-shadow: 7px 7px 4px 0px var(--shadow-gray);
+		box-shadow: var(--shadow-gray) 0px 3px 8px;
+		// box-shadow: 7px 7px 4px 0px var(--shadow-gray);
 	}
 	.imageBlock {
 		.image {

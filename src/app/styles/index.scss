@@ -6,6 +6,7 @@
 .app {
 	padding: 50px;
 	font: var(--font-m);
+	font-family: 'Roboto';
 	background: var(--bg-color);
 	color: var(--primary-color);
 	min-height: 100vh;
@@ -18,4 +19,23 @@
 .page-wrapper {
 	flex-grow: 1;
 	padding: 20px;
+}
+
+input {
+	border: none;
+	outline: none;
+	transition: 0.3s;
+}
+
+button,
+textarea,
+select {
+	transition: 0.3s;
+	margin: 0;
+	font: inherit;
+	line-height: none;
+}
+
+li {
+	text-decoration: none;
 }
