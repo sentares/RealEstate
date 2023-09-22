@@ -8,6 +8,7 @@ import { AxiosInstance } from 'axios'
 import { ProfileSchema } from 'entities/profile'
 import { RealtySchema } from 'entities/realty'
 import { UserSchema } from 'entities/user'
+import { LoginSchema } from 'features/Auth'
 
 import { CombinedState } from 'redux'
 
@@ -15,6 +16,7 @@ export interface StateSchema {
 	user: UserSchema
 	realty: RealtySchema
 
+	loginForm?: LoginSchema
 	profile?: ProfileSchema
 }
 

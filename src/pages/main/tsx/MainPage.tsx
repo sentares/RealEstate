@@ -8,6 +8,7 @@ import Switcher, { SwitcherTheme } from 'shared/ui/switcher/Switcher'
 import { useState } from 'react'
 import { MapPin } from 'lucide-react'
 import Select from 'shared/ui/select/Select'
+import LoginForm from 'features/Auth/tsx/LoginForm/LoginForm'
 
 interface Option {
 	id: number | null
@@ -57,6 +58,7 @@ const Main = () => {
 				handleClickRemoveItem={handleClickRemoveItem}
 				clickedItem={clickedItem}
 			/>
+			<LoginForm onSuccess={() => {}} />
 		</div>
 	)
 }
