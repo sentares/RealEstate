@@ -9,6 +9,7 @@ import { $api } from 'shared/api/api'
 import { createReducerManager } from './ReduserManager'
 import { StateSchema, ThunkExtraArg } from './StateSchema'
 import { realtyReducer } from 'entities/realty'
+import { userReducer } from 'entities/user'
 
 export function createReduxStore(
 	initialState?: StateSchema,
@@ -16,6 +17,7 @@ export function createReduxStore(
 ) {
 	const rootReducers: ReducersMapObject<StateSchema> = {
 		...asyncReducers,
+		user: userReducer,
 		realty: realtyReducer,
 	}
 
