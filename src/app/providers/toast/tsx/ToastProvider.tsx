@@ -23,6 +23,12 @@ export const ToastProvier = () => {
 						color: 'white',
 					},
 				},
+				loading: {
+					style: {
+						background: 'gray',
+						color: 'white',
+					},
+				},
 			}}
 		/>
 	)

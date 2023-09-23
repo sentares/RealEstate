@@ -2,10 +2,12 @@
 	display: flex;
 	flex-direction: column;
 	width: 400px;
+	color: var(--inverted-bg-color);
 }
 
 .input {
 	margin-top: 10px;
+	// color: var(--material-theme-sys-outline);
 }
 
 .loginBtn {

@@ -9,6 +9,7 @@ import { useState } from 'react'
 import { MapPin } from 'lucide-react'
 import Select from 'shared/ui/select/Select'
 import LoginForm from 'features/Auth/tsx/LoginForm/LoginForm'
+import toast from 'react-hot-toast'
 
 interface Option {
 	id: number | null
@@ -58,7 +59,11 @@ const Main = () => {
 				handleClickRemoveItem={handleClickRemoveItem}
 				clickedItem={clickedItem}
 			/>
-			<LoginForm onSuccess={() => {}} />
+			<LoginForm
+				onSuccess={() => {
+					toast.success('good')
+				}}
+			/>
 		</div>
 	)
 }

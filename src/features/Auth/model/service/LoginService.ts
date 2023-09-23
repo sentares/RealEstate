@@ -1,6 +1,7 @@
 import { createAsyncThunk } from '@reduxjs/toolkit'
 import { ThunkConfig } from 'app/providers/store/config/StateSchema'
 import { User, userActions } from 'entities/user'
+import toast from 'react-hot-toast'
 import { USER_LOCALSTORAGE_KEY } from 'shared/const/localStorage'
 
 interface LoginByUsernameProps {
@@ -19,13 +20,17 @@ export const loginByUsername = createAsyncThunk<
 		const { extra, dispatch, rejectWithValue } = thunkApi
 
 		try {
-			const response = await extra.api.post<User>('/login', authData)
+			const response = await extra.api.post('/login/', authData)
 
-			if (!response.data) {
+			if (response.status >= 400) {
+				toast.error(`${response.data.message}`)
 				throw new Error()
 			}
 
-			localStorage.setItem(USER_LOCALSTORAGE_KEY, JSON.stringify(response.data))
+			localStorage.setItem(
+				USER_LOCALSTORAGE_KEY,
+				JSON.stringify(response.data.token)
+			)
 			dispatch(userActions.setAuthData(response.data))
 			return response.data
 		} catch (e) {

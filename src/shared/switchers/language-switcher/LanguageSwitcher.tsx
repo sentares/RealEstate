@@ -12,7 +12,6 @@ export const LangSwitcher = ({ className }: LangSwitcherProps) => {
 
 	const toggle = async () => {
 		i18n.changeLanguage(i18n.language === 'ru' ? 'en' : 'ru')
-		console.log('switch')
 	}
 
 	return (
