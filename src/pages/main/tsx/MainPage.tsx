@@ -10,6 +10,9 @@ import { MapPin } from 'lucide-react'
 import Select from 'shared/ui/select/Select'
 import LoginForm from 'features/Auth/tsx/LoginForm/LoginForm'
 import toast from 'react-hot-toast'
+import LangSwitcher, {
+	LangSwitcherTypeEnum,
+} from 'shared/switchers/language-switcher/LanguageSwitcher'
 
 interface Option {
 	id: number | null
@@ -17,48 +20,12 @@ interface Option {
 }
 
 const Main = () => {
-	const data = useSelector(getRealty)
-
-	const optionsCategory = [
-		{ id: 1, name: 'Мебель' },
-		{
-			id: 2,
-			name: 'Оборудование',
-		},
-		{
-			id: 3,
-			name: 'Вентиляция',
-		},
-	]
-
-	const [clickedItem, setClickedItem] = useState<Option>({
-		id: null,
-		name: '',
-	})
-
-	const handleClickeItem = (item: Option) => {
-		setClickedItem(item)
-	}
-
-	const handleClickRemoveItem = () => {
-		setClickedItem({ id: null, name: '' })
-	}
-
 	return (
 		<div className={cls.main}>
-			<Button className={cls.butt}>hello</Button>
-			<ThemeSwitcher className={cls.themeSwitch} />
 			<div>
 				<DefCard />
 			</div>
-			<Select
-				placeholder='All types'
-				className={cls.select}
-				options={optionsCategory}
-				handleClickeItem={handleClickeItem}
-				handleClickRemoveItem={handleClickRemoveItem}
-				clickedItem={clickedItem}
-			/>
+
 			<LoginForm
 				onSuccess={() => {
 					toast.success('good')

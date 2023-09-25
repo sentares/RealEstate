@@ -2,6 +2,7 @@ import { classNames } from 'shared/lib/classNames/classNames'
 import { AppRouter } from './providers/router'
 import { useTheme } from './providers/themes'
 import { ToastProvier } from './providers/toast'
+import Layout from './layout/Layout'
 
 function App() {
 	const { theme } = useTheme()
@@ -9,7 +10,9 @@ function App() {
 	return (
 		<div className={classNames('app', {}, [theme])}>
 			<ToastProvier />
-			<AppRouter />
+			<Layout>
+				<AppRouter />
+			</Layout>
 		</div>
 	)
 }

@@ -3,9 +3,10 @@ import cls from './Select.module.scss'
 import { Mods, classNames } from 'shared/lib/classNames/classNames'
 import { ChevronDown, XCircle } from 'lucide-react'
 
-interface Option {
+export interface Option {
 	id: number | null
 	name: string
+	short?: string
 }
 
 export enum SelectTheme {
@@ -18,6 +19,8 @@ interface SelectProps {
 	disabled?: boolean
 	placeholder?: string
 	clickedItem?: Option
+	changePlaceholder?: boolean
+	canRemoveItem?: boolean
 	listStyles?: {}
 	theme?: SelectTheme
 	onClick?: (e: React.ChangeEvent<HTMLSelectElement>) => void
@@ -36,8 +39,10 @@ const Select = memo((props: SelectProps) => {
 		className,
 		placeholder,
 		clickedItem,
+		changePlaceholder,
 		listStyles,
 		disabled,
+		canRemoveItem,
 		theme = SelectTheme.DEFAULT,
 		handleClickeItem,
 		handleClickRemoveItem,
@@ -57,7 +62,9 @@ const Select = memo((props: SelectProps) => {
 				className={`${cls['dropdown-button']} ${open && cls.iconOpen} `}
 				disabled={disabled}
 			>
-				{clickedItem?.name ? clickedItem.name : placeholder}
+				{clickedItem?.name && changePlaceholder
+					? clickedItem.name
+					: placeholder}
 				<ChevronDown className={`${cls.icon} ${cls.iconClosed}`} />
 			</button>
 			{open && (
@@ -84,7 +91,7 @@ const Select = memo((props: SelectProps) => {
 								>
 									{item.name}
 								</div>
-								{item.id === clickedItem?.id && (
+								{item.id === clickedItem?.id && canRemoveItem && (
 									<XCircle
 										width={18}
 										cursor='pointer'
