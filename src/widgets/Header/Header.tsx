@@ -5,48 +5,51 @@ import cls from './Header.module.scss'
 import LangSwitcher, {
 	LangSwitcherTypeEnum,
 } from 'shared/switchers/language-switcher/LanguageSwitcher'
+import Container from 'widgets/Container/Container'
 
 const Header = () => {
 	return (
-		<section className={cls.header}>
-			<div className={cls.headerItems}>
-				<div className={cls.headerRight}>
-					<Link to={'/'}>
-						<h2 className={cls.headerLogo}>Logo</h2>
-					</Link>
+		<header className={cls.header}>
+			<Container>
+				<div className={cls.headerItems}>
+					<div className={cls.headerRight}>
+						<Link to={'/'}>
+							<h2 className={cls.headerLogo}>Logo</h2>
+						</Link>
 
-					<Link to={'#'}>
-						<Button
-							className={cls.headerBut}
-							theme={ButtonTheme.OUTLINE}
-							size={ButtonSize.L}
-						>
-							<MapPin />
-							<p>Бишкек</p>
-						</Button>
-					</Link>
-				</div>
+						<Link to={'#'}>
+							<Button
+								className={cls.headerBut}
+								theme={ButtonTheme.OUTLINE}
+								size={ButtonSize.L}
+							>
+								<MapPin />
+								<p>Бишкек</p>
+							</Button>
+						</Link>
+					</div>
 
-				<div className={cls.headerLeft}>
-					<div className={cls.headerLangItems}>
-						<LangSwitcher type={LangSwitcherTypeEnum.SELECT} />
-						{/* <p className={cls.headerLangChange}>Pyc/Eng</p>
+					<div className={cls.headerLeft}>
+						<div className={cls.headerLangItems}>
+							<LangSwitcher type={LangSwitcherTypeEnum.SELECT} />
+							{/* <p className={cls.headerLangChange}>Pyc/Eng</p>
 						<ChevronDown className={cls.headerChevron} /> */}
+						</div>
+						<div className={cls.headerHeart}>
+							<Heart />
+						</div>
+						<Button className={cls.headerAdd} theme={ButtonTheme.OUTLINE}>
+							<Plus />
+							<p>Добавить объявление</p>
+						</Button>
+						<Button className={cls.headerUserBut}>
+							<UserCircle2 />
+							<p>Войти</p>
+						</Button>
 					</div>
-					<div className={cls.headerHeart}>
-						<Heart />
-					</div>
-					<Button className={cls.headerAdd} theme={ButtonTheme.OUTLINE}>
-						<Plus />
-						<p>Добавить объявление</p>
-					</Button>
-					<Button className={cls.headerUserBut}>
-						<UserCircle2 />
-						<p>Войти</p>
-					</Button>
 				</div>
-			</div>
-		</section>
+			</Container>
+		</header>
 	)
 }
 

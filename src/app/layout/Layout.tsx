@@ -1,4 +1,5 @@
 import { useLocation } from 'react-router-dom'
+import Footer from 'widgets/Footer/Footer'
 import Header from 'widgets/Header/Header'
 
 const Layout = (props: any) => {
@@ -18,7 +19,7 @@ const Layout = (props: any) => {
 				<div>
 					<Header />
 					<div className=''>{children}</div>
-					{/* <Footer /> */}
+					<Footer />
 				</div>
 			)}
 		</>
