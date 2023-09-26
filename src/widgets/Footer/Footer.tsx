@@ -6,7 +6,7 @@ import { Mail, Phone } from 'lucide-react'
 
 const Footer = () => {
 	return (
-		<footer className={cls.footer}>
+		<section className={cls.footer}>
 			<AppStores />
 			<Container>
 				<div className={cls.footerWrap}>
@@ -50,7 +50,7 @@ const Footer = () => {
 					</ul>
 				</div>
 			</Container>
-		</footer>
+		</section>
 	)
 }
 

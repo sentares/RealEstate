@@ -1,8 +1,6 @@
-// Import the images
-import QRCode from '../../shared/images/QR-code.png';
-import appStore from '../../shared/images/app-store.png';
-import googleStore from '../../shared/images/google-store.png';
-import Gallery from '../../shared/images/app-gallery.png';
+import { ReactComponent as QRCodeSVG } from './QR-code.svg'
+import { ReactComponent as GallerySVG } from './app-gallery.svg'
+import { ReactComponent as AppStoreSVG } from './app-store.svg'
+import { ReactComponent as GoogleStoreSVG } from './google-store.svg'
 
-// Export them as needed
-export { QRCode, appStore, googleStore, Gallery };
+export { AppStoreSVG, GallerySVG, GoogleStoreSVG, QRCodeSVG }
