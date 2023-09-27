@@ -13,15 +13,14 @@ const Main = () => {
 	return (
 		<div className={cls.main}>
 			<ThemeSwitcher />
-			<div>
-				<DefCard />
-			</div>
 
-			<LoginForm
+			<DefCard />
+
+			{/* <LoginForm
 				onSuccess={() => {
 					toast.success('good')
 				}}
-			/>
+			/> */}
 		</div>
 	)
 }
