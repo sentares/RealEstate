@@ -6,6 +6,8 @@ import { ReactComponent as CartSVG } from './cart.svg'
 import { ReactComponent as BuildingSVG } from './Building.svg'
 import { ReactComponent as HouseDef } from './HouseDef.svg'
 import { ReactComponent as SmallHome } from './smallHome.svg'
+import { ReactComponent as MainFilterBg } from './MainFilterBg.svg'
+import { ReactComponent as FilterIcon } from './FilterIcon.svg'
 
 export {
 	AppStoreSVG,
@@ -16,4 +18,6 @@ export {
 	BuildingSVG,
 	HouseDef,
 	SmallHome,
+	MainFilterBg,
+	FilterIcon,
 }

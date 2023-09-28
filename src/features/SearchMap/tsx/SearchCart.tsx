@@ -1,7 +1,7 @@
 import { Button } from 'shared/ui/button/Button'
 import cls from './SearchCart.module.scss'
 
-const SearchCart = () => {
+const SearchByMap = () => {
 	return (
 		<div className={cls.SearchCart}>
 			<h2>Поиск по карте</h2>
@@ -12,5 +12,4 @@ const SearchCart = () => {
 		</div>
 	)
 }
-
-export default SearchCart
+export default SearchByMap
