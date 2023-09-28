@@ -1,6 +1,6 @@
 .DefCard {
 	display: flex;
-	max-width: 222px;
+	width: 222px;
 	width: 100%;
 	max-height: 244px;
 	height: 100%;
@@ -9,14 +9,13 @@
 	flex-direction: column;
 	justify-content: space-between;
 	border: 1px solid #a4a4a4ad;
-	transition: all 0.3s;
+	transition: all 0.4s;
 	&:hover {
 		scale: 1.004;
 		box-shadow: var(--shadow-gray) 0px 3px 8px;
 	}
 	.imageBlock {
-		max-width: 220px;
-		width: 100%;
+		width: 218.8px;
 		flex-shrink: 0;
 		max-height: 134.6px;
 		height: 100%;
@@ -27,29 +26,32 @@
 			left: 12px;
 			z-index: 40;
 		}
+
 		.defHeart {
 			position: absolute;
 			top: 12px;
 			right: 12px;
 			z-index: 40;
 			color: var(--matrial-theme-def-green);
+			transition: all 0.3s;
+			&:hover {
+				scale: 1.1;
+			}
 		}
+
 		.likedHeart {
 			position: absolute;
 			top: 12px;
 			right: 12px;
 			z-index: 40;
 			color: var(--heart-like-border);
+			transition: all 0.3s;
+			&:hover {
+				scale: 0.9;
+			}
 		}
 
-		// .singleImgBlock {
-		// 	// // max-width: 220px;
-		// 	// // width: 100%;
-		// 	// // flex-shrink: 0;
-		// 	max-height: 134.6px;
-		// 	height: 100%;
 		.image {
-			// flex-shrink: 0;
 			max-height: 134.6px;
 			transition: all 0.3s;
 			display: block;
@@ -57,7 +59,6 @@
 			object-fit: cover;
 			border-radius: 6.6px 6.6px 0px 0px;
 		}
-		// }
 	}
 	.infoBlock {
 		display: flex;

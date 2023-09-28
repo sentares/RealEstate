@@ -1,26 +1,32 @@
-import LoginForm from 'features/Auth/tsx/LoginForm/LoginForm'
 import { DefCard } from 'features/RealtyCard'
-import toast from 'react-hot-toast'
+import { SearchCart } from 'features/SearchCart'
+import AdBlock from 'shared/blocks/adBlock/AdBlock'
+import NewsBlock from 'shared/blocks/newsBlock/NewsBlock'
 import { ThemeSwitcher } from 'shared/switchers/theme-switcher/ThemeSwitcher'
 import cls from './MainPage.module.scss'
-
-interface Option {
-	id: number | null
-	name: string
-}
 
 const Main = () => {
 	return (
 		<div className={cls.main}>
 			<ThemeSwitcher />
-
-			<DefCard />
-
-			{/* <LoginForm
-				onSuccess={() => {
-					toast.success('good')
-				}}
-			/> */}
+			<SearchCart />
+			<div className={cls.lenta}>
+				<div className={cls.cardAndNews}>
+					<div className={cls.cardBlock}>
+						<h2>Интересные предложения</h2>
+						<div className={cls.cards}>
+							<DefCard />
+							<DefCard />
+							<DefCard />
+							<DefCard />
+							<DefCard />
+							<DefCard />
+						</div>
+					</div>
+					<NewsBlock />
+				</div>
+				<AdBlock />
+			</div>
 		</div>
 	)
 }
