@@ -3,6 +3,7 @@ import { Button, ButtonTheme } from 'shared/ui/button/Button'
 import cls from './MainFilter.module.scss'
 import { Input } from 'shared/ui/input/Input'
 import { useState } from 'react'
+import { motion } from "framer-motion"
 
 const MainFilter = () => {
 	const types = [
@@ -32,8 +33,15 @@ const MainFilter = () => {
 
 	return (
 		<div className={cls.MainFilter}>
-			<h1>Продать и купить недвижимость в Кыргызстане</h1>
-			<div className={cls.filterBlock}>
+			<motion.h1
+			 initial={{ opacity: 0, y: -100 }} 
+			 animate={{ opacity: 1, y: 0 }} 
+			 transition={{ duration: 3, times: [0, 0.2, 1] }} >Продать и купить недвижимость в Кыргызстане</motion.h1>
+			<motion.div 
+			initial={{ opacity: 0, y: -100 }} 
+			animate={{ opacity: 1, y: 0 }} 
+			transition={{ duration: 1.5 }}
+			className={cls.filterBlock}>
 				<div className={cls.typeBlock}>
 					{types.map(type => (
 						<div
@@ -98,7 +106,7 @@ const MainFilter = () => {
 						</div>
 					</div>
 				</div>
-			</div>
+			</motion.div>
 		</div>
 	)
 }

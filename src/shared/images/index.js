@@ -8,6 +8,10 @@ import { ReactComponent as HouseDef } from './HouseDef.svg'
 import { ReactComponent as SmallHome } from './smallHome.svg'
 import { ReactComponent as MainFilterBg } from './MainFilterBg.svg'
 import { ReactComponent as FilterIcon } from './FilterIcon.svg'
+import { ReactComponent as AdvertBlog1 } from './advertising1.svg'
+import { ReactComponent as AdvertBlog2 } from './advertising2.svg'
+import { ReactComponent as AdvertBlog3 } from './advertising3.svg'
+import { ReactComponent as AdvertBg } from './AdvertisingBg.svg'
 
 export {
 	AppStoreSVG,
@@ -20,4 +24,8 @@ export {
 	SmallHome,
 	MainFilterBg,
 	FilterIcon,
+	AdvertBlog1,
+	AdvertBlog2,
+	AdvertBlog3,
+	AdvertBg,
 }
