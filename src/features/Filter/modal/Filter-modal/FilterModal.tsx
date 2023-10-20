@@ -1,16 +1,23 @@
 import { Button } from 'shared/ui/button/Button'
-import cls from './Filter.module.scss'
+import cls from './FilterModal.module.scss'
 import FilterFlats from './FilterFlats/FilterFlats'
 import FilterHouse from './FilterHouse/FilterHouse'
 import FilterLocation from './FilterLocation/FilterLocation'
 
-const FilterModal = () => {
+interface FilterModalProps {
+	changeModalState: () => void
+}
+
+const FilterModal = (props: FilterModalProps) => {
+	const { changeModalState } = props
 	return (
 		<section className={cls.filterModal}>
 			<div className={cls.filter}>
 				<div className={cls.filterModalClose}>
 					<h1 className={cls.filterTitle}>Расширенные фильтры</h1>
-					<Button className={cls.filterClose}>&times;</Button>
+					<Button className={cls.filterClose} onClick={changeModalState}>
+						&times;
+					</Button>
 				</div>
 				<div className={cls.filterFineHousing}>
 					<div className={cls.filterInfoText}>

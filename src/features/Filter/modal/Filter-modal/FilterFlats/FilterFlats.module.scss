@@ -6,10 +6,11 @@
 
 	.filterFlatsTitleSquare {
 		color: var(--inverted-bg-color);
-		font-size: 24px;
-		font-weight: 400;
+		font-size: 22px;
+		font-weight: 300;
 		line-height: 32px;
 		width: 220px;
+		text-align: start;
 	}
 
 	.filterFlatsInputItems {
@@ -42,6 +43,9 @@
 		font-weight: 500;
 		line-height: 44px;
 		margin-bottom: 17px;
+		display: flex;
+		align-items: center;
+		gap: 12px;
 	}
 	.filterFlatsWrapper {
 		display: flex;

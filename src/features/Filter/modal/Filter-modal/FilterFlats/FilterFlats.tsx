@@ -1,41 +1,67 @@
 import { Button } from 'shared/ui/button/Button'
 import cls from './FilterFlats.module.scss'
+import Switcher from 'shared/ui/switcher/Switcher'
+import { useState } from 'react'
 
 const FilterFlats = () => {
+	const [toggleFlats, setToggleFlats] = useState(false)
+	function changeToggleFlats() {
+		setToggleFlats(!toggleFlats)
+	}
+
 	return (
 		<div className={cls.filterFlats}>
-			<h2 className={cls.filterFlatsTitle}>Квартиры</h2>
+			<div className={cls.filterFlatsTitle}>
+				Квартиры
+				<Switcher isOn={toggleFlats} handleToggle={changeToggleFlats} />
+			</div>
 			<div className={cls.filterFlatsWrapper}>
 				<div className={cls.filterFlatsSquare}>
-					<h5 className={cls.filterFlatsTitleSquare}>Площадь</h5>
-						<div className={cls.filterFlatsInputItems}>
-							<input className={cls.filterFlatsInput} type="number" placeholder='От'/>
-							<input className={`${cls.filterFlatsInput} ${cls.filterFlatsInput2}`} type="number" placeholder='До                          m2'/>
-						</div>
+					<p className={cls.filterFlatsTitleSquare}>Площадь</p>
+					<div className={cls.filterFlatsInputItems}>
+						<input
+							className={cls.filterFlatsInput}
+							type='number'
+							placeholder='От'
+						/>
+						<input
+							className={`${cls.filterFlatsInput} ${cls.filterFlatsInput2}`}
+							type='number'
+							placeholder='До                          m2'
+						/>
+					</div>
 				</div>
 				<div className={cls.filterFlatsSquare}>
-					<h5 className={cls.filterFlatsTitleSquare}>Этаж</h5>
-						<div className={cls.filterFlatsInputItems}>
-							<input className={cls.filterFlatsInput} type="number" placeholder='От'/>
-							<input className={cls.filterFlatsInput} type="number" placeholder='До'/>
-						</div>
-						<div className={cls.filterFlatsCheckbox}>
-							<label>
-								<input type="checkbox" />
+					<p className={cls.filterFlatsTitleSquare}>Этаж</p>
+					<div className={cls.filterFlatsInputItems}>
+						<input
+							className={cls.filterFlatsInput}
+							type='number'
+							placeholder='От'
+						/>
+						<input
+							className={cls.filterFlatsInput}
+							type='number'
+							placeholder='До'
+						/>
+					</div>
+					<div className={cls.filterFlatsCheckbox}>
+						<label>
+							<input type='checkbox' />
 							Не первый
-							</label>
-							<label>
-								<input type="checkbox" />
+						</label>
+						<label>
+							<input type='checkbox' />
 							Не последний
-							</label>
-							<label>
-								<input type="checkbox" />
+						</label>
+						<label>
+							<input type='checkbox' />
 							Последний
-							</label>	
-						</div>
+						</label>
+					</div>
 				</div>
 				<div className={cls.filterFlatsItemBlog}>
-					<h5 className={cls.filterFlatsTitleSquare}>Отделка</h5>
+					<p className={cls.filterFlatsTitleSquare}>Отделка</p>
 					<div className={cls.filterFlatsGroupBtn}>
 						<Button className={cls.filterFlatsBtn}>Частичный ремонт</Button>
 						<Button className={cls.filterFlatsBtn}>Косметический ремонт</Button>
@@ -45,7 +71,7 @@ const FilterFlats = () => {
 				</div>
 
 				<div className={cls.filterFlatsItemBlog}>
-					<h5 className={cls.filterFlatsTitleSquare}>Балкон</h5>
+					<p className={cls.filterFlatsTitleSquare}>Балкон</p>
 					<div className={cls.filterFlatsGroupBtn}>
 						<Button className={cls.filterFlatsBtn}>Балкон</Button>
 						<Button className={cls.filterFlatsBtn}>Лоджия</Button>
@@ -54,7 +80,7 @@ const FilterFlats = () => {
 				</div>
 
 				<div className={cls.filterFlatsItemBlog}>
-					<h5 className={cls.filterFlatsTitleSquare}>Мебель</h5>
+					<p className={cls.filterFlatsTitleSquare}>Мебель</p>
 					<div className={cls.filterFlatsGroupBtn}>
 						<Button className={cls.filterFlatsBtn}>Да</Button>
 						<Button className={cls.filterFlatsBtn}>Нет</Button>
@@ -62,11 +88,19 @@ const FilterFlats = () => {
 				</div>
 
 				<div className={cls.filterFlatsItemBlog}>
-					<h5 className={cls.filterFlatsTitleSquare}>Кухня</h5>
+					<p className={cls.filterFlatsTitleSquare}>Кухня</p>
 					<div className={cls.filterFlatsInputItems}>
-							<input className={cls.filterFlatsInput} type="number" placeholder='От'/>
-							<input className={`${cls.filterFlatsInput} ${cls.filterFlatsInput2}`} type="number" placeholder='До                          m2'/>
-						</div>
+						<input
+							className={cls.filterFlatsInput}
+							type='number'
+							placeholder='От'
+						/>
+						<input
+							className={`${cls.filterFlatsInput} ${cls.filterFlatsInput2}`}
+							type='number'
+							placeholder='До                          m2'
+						/>
+					</div>
 					<div className={cls.filterFlatsGroupBtn}>
 						<Button className={cls.filterFlatsBtn}>от 6 м2</Button>
 						<Button className={cls.filterFlatsBtn}>от 8 м2</Button>
@@ -76,7 +110,7 @@ const FilterFlats = () => {
 				</div>
 
 				<div className={cls.filterFlatsItemBlog}>
-					<h5 className={cls.filterFlatsTitleSquare}>Высота потолков</h5>
+					<p className={cls.filterFlatsTitleSquare}>Высота потолков</p>
 					<div className={cls.filterFlatsGroupBtn}>
 						<Button className={cls.filterFlatsBtn}>от 2,5 м</Button>
 						<Button className={cls.filterFlatsBtn}>от 2,7 м</Button>
@@ -86,7 +120,7 @@ const FilterFlats = () => {
 				</div>
 
 				<div className={cls.filterFlatsItemBlog}>
-					<h5 className={cls.filterFlatsTitleSquare}>Санузел</h5>
+					<p className={cls.filterFlatsTitleSquare}>Санузел</p>
 					<div className={cls.filterFlatsGroupBtn}>
 						<Button className={cls.filterFlatsBtn}>Раздельный</Button>
 						<Button className={cls.filterFlatsBtn}>Совмещенный</Button>

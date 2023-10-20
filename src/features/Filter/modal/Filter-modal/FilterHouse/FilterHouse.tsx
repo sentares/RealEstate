@@ -1,10 +1,20 @@
+import { useState } from 'react'
 import { Button } from 'shared/ui/button/Button'
+import Switcher from 'shared/ui/switcher/Switcher'
 import cls from './FilterHouse.module.scss'
 
 const FilterHouse = () => {
+	const [toggleHouse, setToggleHouse] = useState(false)
+	function changeToggleHouse() {
+		setToggleHouse(!toggleHouse)
+	}
+
 	return (
 		<div className={cls.filterHouse}>
-			<h2 className={cls.filterFlatsTitle}>Дом</h2>
+			<div className={cls.filterFlatsTitle}>
+				Дом
+				<Switcher isOn={toggleHouse} handleToggle={changeToggleHouse} />
+			</div>
 			<div className={cls.filterFlatsWrapper}>
 				<div className={cls.filterFlatsSquare}>
 					<h5 className={cls.filterFlatsTitleSquare}>Год постройки</h5>
