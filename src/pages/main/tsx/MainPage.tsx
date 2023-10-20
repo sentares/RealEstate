@@ -9,6 +9,7 @@ import Advertising from 'widgets/Advertising/Advertising'
 import { $api } from 'shared/api/api'
 import { useEffect } from 'react'
 import axios from 'axios'
+import { FilterModal } from 'features/Filter/modal'
 
 const Main = () => {
 	const getData = async () => {

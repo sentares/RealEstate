@@ -1,0 +1,108 @@
+.filterModal {
+	height: 100vh;
+	width: 100%;
+	max-height: 100vh;
+	overflow-y: auto;
+	background-color: rgba(0, 0, 0, 0.351);
+	position: fixed;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	top: 0;
+	left: 0;
+	z-index: 20;
+	text-align: center;
+	cursor: default;
+	display: flex;
+	flex-direction: column;
+}
+
+.filter {
+	background-color: var(--bg-color);
+	height: auto;
+	width: 1120px;
+	height: 90%;
+	box-shadow: 0px 6px 9px 8px rgba(34, 60, 80, 0.2);
+	padding: 35px 41px 25px 49px;
+
+	.filterModalClose {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		margin-bottom: 35px;
+
+		.filterTitle {
+			color: var(--inverted-bg-color);
+			text-align: center;
+			font-size: 36px;
+			font-weight: 500;
+			line-height: 44px;
+		}
+
+		.filterClose {
+			position: relative;
+			font-size: 36px;
+			line-height: 22px;
+			padding: 8px;
+			cursor: pointer;
+			border: none;
+			background-color: transparent;
+		}
+
+		.filterClose::after {
+			content: '';
+			position: absolute;
+			border-radius: 50%;
+			width: 40px;
+			height: 40px;
+			top: 6%;
+			left: 0%;
+			transform: translate(-50%, -50%);
+			border: 1px solid var(--material-theme-sys-primary);
+			transform: translate(-3px, -2px);
+		}
+	}
+
+	.filterFineHousing {
+		display: flex;
+
+		color: var(--inverted-bg-color);
+		padding: 14px 31px 15px 30px;
+		background-color: var(--material-theme-sys-light-secondary-container);
+		border-radius: 16px;
+		.filterInfoText {
+		}
+
+		.filterInfoTitle {
+			font-size: 22px;
+			font-weight: 500;
+			line-height: 28px;
+			margin-bottom: 8px;
+		}
+
+		.filterText {
+			max-width: 773px;
+			font-size: 16px;
+			font-weight: 400;
+			line-height: 28px;
+		}
+		.filterBlogBtn {
+			display: flex;
+			justify-self: flex-end;
+			align-self: flex-end;
+
+			.filterBtn {
+				padding: 10px 24px;
+				gap: 8px;
+				flex: 1 0 0;
+				border-radius: 8px;
+				background: var(--material-theme-sys-primary);
+				color: var(--bg-color);
+
+				font-size: 14px;
+				font-weight: 500;
+				line-height: 20px;
+			}
+		}
+	}
+}
