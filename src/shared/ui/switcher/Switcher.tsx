@@ -1,6 +1,6 @@
-import { ReactNode, useContext } from 'react'
+import React, { memo, useContext } from 'react'
 import cls from './Switcher.module.scss'
-import { classNames, type Mods } from 'shared/lib/classNames/classNames'
+import { classNames } from 'shared/lib/classNames/classNames'
 import { ThemeContext } from 'app/providers/themes/lib/ThemeContext'
 import { Camera, Check, X } from 'lucide-react'
 
@@ -15,10 +15,11 @@ interface SwitcherProps {
 	disabled?: boolean
 	icon?: boolean
 	className?: string
-	handleToggle: () => void
+	onToggle: () => void
+	id: string
 }
 
-const Switcher = (props: SwitcherProps) => {
+const Switcher = memo((props: SwitcherProps) => {
 	const themeData = useContext(ThemeContext)
 
 	const initialButtonColor = themeData.theme === 'dark' ? '#cbd5e1' : '#717971'
@@ -30,10 +31,11 @@ const Switcher = (props: SwitcherProps) => {
 		disabled,
 		icon,
 		className,
-		handleToggle,
+		onToggle,
+		id,
 	} = props
 
-	const mods: Mods = {
+	const mods = {
 		[cls[theme]]: true,
 		[cls.disabled]: disabled,
 	}
@@ -43,15 +45,16 @@ const Switcher = (props: SwitcherProps) => {
 			<input
 				checked={isOn}
 				className={classNames(cls.switchCheckbox, mods, [className])}
-				id={`react-switch-new`}
+				id={`react-switch-new${id}`}
 				type='checkbox'
-				onChange={handleToggle}
+				key={1}
+				onChange={onToggle}
 				disabled={disabled}
 			/>
 			<label
 				style={!isOn ? { background: initialLabelColor } : {}}
 				className={classNames(cls.switchLabel, mods)}
-				htmlFor={`react-switch-new`}
+				htmlFor={`react-switch-new${id}`}
 			>
 				<span
 					style={!isOn ? { background: initialButtonColor } : {}}
@@ -69,6 +72,6 @@ const Switcher = (props: SwitcherProps) => {
 			</label>
 		</>
 	)
-}
+})
 
 export default Switcher

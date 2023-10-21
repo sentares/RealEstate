@@ -2,18 +2,29 @@ import { Button } from 'shared/ui/button/Button'
 import cls from './FilterFlats.module.scss'
 import Switcher from 'shared/ui/switcher/Switcher'
 import { useState } from 'react'
+import { useDispatch } from 'react-redux'
+import { filterActions } from 'entities/filter/model/slice/FilterSlice'
 
-const FilterFlats = () => {
-	const [toggleFlats, setToggleFlats] = useState(false)
+interface FilterFlatsProps {
+	typeState: boolean
+}
+
+const FilterFlats = (props: FilterFlatsProps) => {
+	const { typeState } = props
+
+	const dispatch = useDispatch()
+
 	function changeToggleFlats() {
-		setToggleFlats(!toggleFlats)
+		dispatch(filterActions.setTypeFlat(!typeState))
 	}
+
+	console.log(typeState)
 
 	return (
 		<div className={cls.filterFlats}>
 			<div className={cls.filterFlatsTitle}>
 				Квартиры
-				<Switcher isOn={toggleFlats} handleToggle={changeToggleFlats} />
+				<Switcher isOn={typeState} onToggle={changeToggleFlats} id='flat' />
 			</div>
 			<div className={cls.filterFlatsWrapper}>
 				<div className={cls.filterFlatsSquare}>

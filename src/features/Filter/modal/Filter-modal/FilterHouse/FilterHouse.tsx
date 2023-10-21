@@ -2,18 +2,27 @@ import { useState } from 'react'
 import { Button } from 'shared/ui/button/Button'
 import Switcher from 'shared/ui/switcher/Switcher'
 import cls from './FilterHouse.module.scss'
+import { useDispatch } from 'react-redux'
+import { filterActions } from 'entities/filter/model/slice/FilterSlice'
 
-const FilterHouse = () => {
-	const [toggleHouse, setToggleHouse] = useState(false)
+interface FilterHouseProps {
+	typeState: boolean
+}
+
+const FilterHouse = (props: FilterHouseProps) => {
+	const { typeState } = props
+
+	const dispatch = useDispatch()
+
 	function changeToggleHouse() {
-		setToggleHouse(!toggleHouse)
+		dispatch(filterActions.setTypeHouse(!typeState))
 	}
 
 	return (
 		<div className={cls.filterHouse}>
 			<div className={cls.filterFlatsTitle}>
 				Дом
-				<Switcher isOn={toggleHouse} handleToggle={changeToggleHouse} />
+				<Switcher isOn={typeState} onToggle={changeToggleHouse} id='house' />
 			</div>
 			<div className={cls.filterFlatsWrapper}>
 				<div className={cls.filterFlatsSquare}>

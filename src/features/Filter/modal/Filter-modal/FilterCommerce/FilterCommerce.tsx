@@ -2,17 +2,31 @@ import Switcher from 'shared/ui/switcher/Switcher'
 import cls from './FilterCommerce.module.scss'
 import { Button } from 'shared/ui/button/Button'
 import { useState } from 'react'
+import { useDispatch } from 'react-redux'
+import { filterActions } from 'entities/filter/model/slice/FilterSlice'
 
-const FilterCommerce = () => {
-	const [toggleCommerce, setToggleCommerce] = useState(false)
+interface FilterCommerceProps {
+	typeState: boolean
+}
+
+const FilterCommerce = (props: FilterCommerceProps) => {
+	const { typeState } = props
+
+	const dispatch = useDispatch()
+
 	function changeToggleCommerce() {
-		setToggleCommerce(!toggleCommerce)
+		dispatch(filterActions.setTypeCommerce(!typeState))
 	}
+
 	return (
 		<div className={cls.filterCommerce}>
 			<div className={cls.filterCommerceTitle}>
 				Коммерческое
-				<Switcher isOn={toggleCommerce} handleToggle={changeToggleCommerce} />
+				<Switcher
+					isOn={typeState}
+					onToggle={changeToggleCommerce}
+					id='commerce'
+				/>
 			</div>
 			<div className={cls.filterCommerceWrapper}>
 				<div className={cls.filterCommerceSquare}>

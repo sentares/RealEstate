@@ -1,4 +1,4 @@
-import { Button } from 'shared/ui/button/Button'
+import { Button, ButtonTheme } from 'shared/ui/button/Button'
 import cls from './FilterLocation.module.scss'
 
 const FilterLocation = () => {
@@ -8,8 +8,10 @@ const FilterLocation = () => {
 			<div className={cls.filterFlatsWrapper}>
 				<div className={cls.filterFlatsItemBlog}>
 					<h5 className={cls.filterFlatsTitleSquare}>На карте</h5>
-					<div className={cls.filterFlatsGroupBtn}>
-						<Button className={cls.filterFlatsBtn}>Обвести на карте</Button>
+					<div className={cls.filterFlatsGroupBtn} style={{ width: '180px' }}>
+						<Button className={cls.filterFlatsBtn} theme={ButtonTheme.ELEVANT}>
+							Обвести на карте
+						</Button>
 					</div>
 				</div>
 

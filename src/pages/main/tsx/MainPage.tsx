@@ -1,15 +1,13 @@
+import axios from 'axios'
 import MainFilter from 'features/Filter/ui/tsx/MainFilter'
 import { DefCard } from 'features/RealtyCard'
 import SearchByMap from 'features/SearchMap/tsx/SearchCart'
+import { useEffect } from 'react'
 import AdBlock from 'shared/blocks/adBlock/AdBlock'
 import NewsBlock from 'shared/blocks/newsBlock/NewsBlock'
 import { ThemeSwitcher } from 'shared/switchers/theme-switcher/ThemeSwitcher'
-import cls from './MainPage.module.scss'
 import Advertising from 'widgets/Advertising/Advertising'
-import { $api } from 'shared/api/api'
-import { useEffect } from 'react'
-import axios from 'axios'
-import { FilterModal } from 'features/Filter/modal'
+import cls from './MainPage.module.scss'
 
 const Main = () => {
 	const getData = async () => {
@@ -22,6 +20,7 @@ const Main = () => {
 	useEffect(() => {
 		// getData()
 	}, [])
+
 	return (
 		<div className={cls.main}>
 			<MainFilter />

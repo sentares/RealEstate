@@ -18,13 +18,14 @@
 		position: fixed;
 		bottom: 2%;
 		width: 100%;
-		max-width: 82%;
+		max-width: 84%;
 		left: 50%;
 		transform: translateX(-50%);
 		text-align: center;
 		z-index: 100;
-		padding: 20px 0;
+		padding: 20px 10px;
 		background-color: var(--bg-color);
+		border-radius: 14px;
 		.filterBtn {
 			width: 100%;
 			padding: 14px 0;

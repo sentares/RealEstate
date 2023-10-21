@@ -24,7 +24,7 @@
 
 	.filterFlatsTitleSquare {
 		color: var(--inverted-bg-color);
-		font-size: 24px;
+		font-size: 22px;
 		font-weight: 400;
 		line-height: 32px;
 		width: 220px;
@@ -53,6 +53,7 @@
 	}
 
 	.filterFlatsTitle {
+		text-align: start;
 		color: var(--inverted-bg-color);
 		font-size: 28px;
 		font-weight: 500;
