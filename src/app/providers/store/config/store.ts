@@ -5,11 +5,12 @@ import {
 	ReducersMapObject,
 } from '@reduxjs/toolkit'
 
+import { filterReducer } from 'entities/filter'
+import { realtyReducer } from 'entities/realty'
+import { userReducer } from 'entities/user'
 import { $api } from 'shared/api/api'
 import { createReducerManager } from './ReduserManager'
 import { StateSchema, ThunkExtraArg } from './StateSchema'
-import { realtyReducer } from 'entities/realty'
-import { userReducer } from 'entities/user'
 
 export function createReduxStore(
 	initialState?: StateSchema,
@@ -19,6 +20,7 @@ export function createReduxStore(
 		...asyncReducers,
 		user: userReducer,
 		realty: realtyReducer,
+		filter: filterReducer,
 	}
 
 	const reducerManager = createReducerManager(rootReducers)

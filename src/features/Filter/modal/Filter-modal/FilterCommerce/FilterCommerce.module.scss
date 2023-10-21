@@ -1,46 +1,28 @@
-.filterLocation {
+.filterCommerce {
 	padding-top: 23px;
-	margin-bottom: 86px;
+	margin-bottom: 36px;
+	background-color: var(--bg-color);
 	width: 100%;
-	.filterFlatsCheckbox {
-		margin-top: 20px;
-		display: flex;
-		justify-content: space-around;
 
-		margin-left: 32px;
-		color: var(--material-theme-sys-primary);
-
-		label {
-			font-size: 22px;
-			color: var(--material-theme-sys-primary);
-		}
-
-		input {
-			accent-color: #006d39;
-			margin-right: 15px;
-			border: none;
-		}
-	}
-
-	.filterFlatsTitleSquare {
+	.filterCommerceTitleSquare {
 		color: var(--inverted-bg-color);
-		font-size: 24px;
-		font-weight: 400;
+		font-size: 22px;
+		font-weight: 300;
 		line-height: 32px;
 		width: 220px;
 		text-align: start;
 	}
 
-	.filterFlatsInputItems {
+	.filterCommerceInputItems {
 		border: 2px solid var(--material-theme-sys-primary);
 		border-radius: 8px 8px 8px 8px;
 		margin-right: 8px;
 
-		.filterFlatsInput:nth-child(1) {
+		.filterCommerceInput:nth-child(1) {
 			border-right: 2px solid var(--material-theme-sys-primary);
 		}
 
-		.filterFlatsInput {
+		.filterCommerceInput {
 			padding: 10px 11px;
 			background-color: transparent;
 			color: var(--inverted-bg-color);
@@ -50,38 +32,53 @@
 			font-weight: 400;
 			line-height: 16px;
 		}
+		.filterCommerceInput2 {
+			width: 173px;
+		}
 	}
 
-	.filterFlatsTitle {
+	.filterCommerceTitle {
 		color: var(--inverted-bg-color);
 		font-size: 28px;
 		font-weight: 500;
 		line-height: 44px;
 		margin-bottom: 17px;
+		display: flex;
+		align-items: center;
+		gap: 12px;
 	}
-	.filterFlatsWrapper {
+	.filterCommerceWrapper {
 		display: flex;
 		flex-direction: column;
 		gap: 12px;
 
-		.filterFlatsSquare {
+		.filterCommerceSquare {
 			display: flex;
 			align-items: center;
+
+			.filterCommerceCheckbox {
+				display: flex;
+				gap: 15px;
+				margin-left: 32px;
+				color: var(--material-theme-sys-primary);
+
+				input {
+					accent-color: #006d39;
+					margin-right: 15px;
+					border: none;
+				}
+			}
 		}
-		.filterFlatsItemBlog {
-			display: grid;
-			grid-template-columns: 220px 1fr;
+		.filterCommerceItemBlog {
+			display: flex;
 			align-items: center;
 
-			.filterFlatsGroupBtn {
+			.filterCommerceGroupBtn {
 				display: flex;
 				align-items: center;
-				flex-direction: row;
-				flex-wrap: wrap;
-				height: auto;
 				gap: 8px;
 
-				.filterFlatsBtn {
+				.filterCommerceBtn {
 					padding: 10px 24px;
 					border-radius: 20px;
 

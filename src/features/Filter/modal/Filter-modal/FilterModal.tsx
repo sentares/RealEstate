@@ -3,6 +3,7 @@ import cls from './FilterModal.module.scss'
 import FilterFlats from './FilterFlats/FilterFlats'
 import FilterHouse from './FilterHouse/FilterHouse'
 import FilterLocation from './FilterLocation/FilterLocation'
+import FilterCommerce from './FilterCommerce/FilterCommerce'
 
 interface FilterModalProps {
 	changeModalState: () => void
@@ -36,7 +37,11 @@ const FilterModal = (props: FilterModalProps) => {
 				</div>
 				<FilterFlats />
 				<FilterHouse />
+				<FilterCommerce />
 				<FilterLocation />
+				<div className={cls.filterLocationShowBtn}>
+					<Button className={cls.filterBtn}>Показать</Button>
+				</div>
 			</div>
 		</section>
 	)

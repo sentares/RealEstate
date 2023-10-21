@@ -5,6 +5,7 @@ import {
 	ReducersMapObject,
 } from '@reduxjs/toolkit'
 import { AxiosInstance } from 'axios'
+import { FilterSchema } from 'entities/filter'
 import { ProfileSchema } from 'entities/profile'
 import { RealtySchema } from 'entities/realty'
 import { UserSchema } from 'entities/user'
@@ -15,6 +16,7 @@ import { CombinedState } from 'redux'
 export interface StateSchema {
 	user: UserSchema
 	realty: RealtySchema
+	filter: FilterSchema
 
 	loginForm?: LoginSchema
 	profile?: ProfileSchema

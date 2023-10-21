@@ -44,9 +44,6 @@ const FilterLocation = () => {
 					</label>
 				</div>
 			</div>
-			<div className={cls.filterLocationShowBtn}>
-				<Button className={cls.filterBtn}>Показать</Button>
-			</div>
 		</div>
 	)
 }

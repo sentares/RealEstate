@@ -9,11 +9,34 @@
 	justify-content: center;
 	top: 0;
 	left: 0;
-	z-index: 20;
+	z-index: 80;
 	text-align: center;
 	cursor: default;
 	display: flex;
 	flex-direction: column;
+	.filterLocationShowBtn {
+		position: fixed;
+		bottom: 2%;
+		width: 100%;
+		max-width: 82%;
+		left: 50%;
+		transform: translateX(-50%);
+		text-align: center;
+		z-index: 100;
+		padding: 20px 0;
+		background-color: var(--bg-color);
+		.filterBtn {
+			width: 100%;
+			padding: 14px 0;
+			border-radius: 8px;
+			background: var(--material-theme-sys-primary);
+			color: var(--bg-color);
+			font-size: 14px;
+			font-weight: 500;
+			line-height: 20px;
+			box-shadow: 0px 6px 9px 8px rgba(34, 60, 80, 0.2);
+		}
+	}
 }
 
 .filter {
