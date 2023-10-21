@@ -14,7 +14,8 @@
 	cursor: default;
 	display: flex;
 	flex-direction: column;
-	overflow: hidden; /* Добавлено свойство overflow: hidden; */
+	overflow: hidden;
+	user-select: none;
 
 	.filterLocationShowBtn {
 		position: fixed;
@@ -69,6 +70,51 @@
 	height: 96%;
 	box-shadow: 0px 6px 9px 8px rgba(34, 60, 80, 0.2);
 	padding: 35px 41px 25px 49px;
+
+	.filterCellType {
+		margin-top: 28px;
+		width: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		border-radius: 20px;
+		border: 1px solid var(--inverted-bg-color);
+		cursor: pointer;
+		.singleCellType {
+			width: 33.33%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			height: 100%;
+			padding: 10px;
+			border-right: 1px solid var(--inverted-bg-color);
+			color: var(--material-theme-sys-primary);
+			&:first-child {
+				border-radius: 20px 0 0 20px;
+			}
+			&:last-child {
+				border-right: none;
+				border-radius: 0 20px 20px 0;
+			}
+			&:hover {
+				background: var(--material-theme-sys-primary);
+				color: var(--bg-color);
+				fill: var(--bg-color);
+			}
+		}
+		.activeCellType {
+			width: 33.33%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			gap: 8px;
+			height: 100%;
+			padding: 10px;
+			border-right: 1px solid var(--inverted-bg-color);
+			color: var(--inverted-bg-color);
+			background: var(--material-theme-sys-secondary-container);
+		}
+	}
 
 	.filterModalClose {
 		display: flex;
