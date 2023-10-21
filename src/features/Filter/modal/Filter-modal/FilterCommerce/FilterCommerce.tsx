@@ -28,68 +28,72 @@ const FilterCommerce = (props: FilterCommerceProps) => {
 					id='commerce'
 				/>
 			</div>
-			<div className={cls.filterCommerceWrapper}>
-				<div className={cls.filterCommerceSquare}>
-					<p className={cls.filterCommerceTitleSquare}>Площадь</p>
-					<div className={cls.filterCommerceInputItems}>
-						<input
-							className={cls.filterCommerceInput}
-							type='number'
-							placeholder='От'
-						/>
-						<input
-							className={`${cls.filterCommerceInput} ${cls.filterCommerceInput2}`}
-							type='number'
-							placeholder='До                          m2'
-						/>
+			{typeState && (
+				<div className={cls.filterCommerceWrapper}>
+					<div className={cls.filterCommerceSquare}>
+						<p className={cls.filterCommerceTitleSquare}>Площадь</p>
+						<div className={cls.filterCommerceInputItems}>
+							<input
+								className={cls.filterCommerceInput}
+								type='number'
+								placeholder='От'
+							/>
+							<input
+								className={`${cls.filterCommerceInput} ${cls.filterCommerceInput2}`}
+								type='number'
+								placeholder='До                          m2'
+							/>
+						</div>
 					</div>
-				</div>
-				<div className={cls.filterCommerceSquare}>
-					<p className={cls.filterCommerceTitleSquare}>Этажей в офисе</p>
-					<div className={cls.filterCommerceInputItems}>
-						<input
-							className={cls.filterCommerceInput}
-							type='number'
-							placeholder='От'
-						/>
-						<input
-							className={cls.filterCommerceInput}
-							type='number'
-							placeholder='До'
-						/>
+					<div className={cls.filterCommerceSquare}>
+						<p className={cls.filterCommerceTitleSquare}>Этажей в офисе</p>
+						<div className={cls.filterCommerceInputItems}>
+							<input
+								className={cls.filterCommerceInput}
+								type='number'
+								placeholder='От'
+							/>
+							<input
+								className={cls.filterCommerceInput}
+								type='number'
+								placeholder='До'
+							/>
+						</div>
 					</div>
-				</div>
-				<div className={cls.filterCommerceItemBlog}>
-					<p className={cls.filterCommerceTitleSquare}>Отделка</p>
-					<div className={cls.filterCommerceGroupBtn}>
-						<Button className={cls.filterCommerceBtn}>Частичный ремонт</Button>
-						<Button className={cls.filterCommerceBtn}>
-							Косметический ремонт
-						</Button>
-						<Button className={cls.filterCommerceBtn}>
-							Современный ремонт
-						</Button>
-						<Button className={cls.filterCommerceBtn}>Нет ремонта</Button>
+					<div className={cls.filterCommerceItemBlog}>
+						<p className={cls.filterCommerceTitleSquare}>Отделка</p>
+						<div className={cls.filterCommerceGroupBtn}>
+							<Button className={cls.filterCommerceBtn}>
+								Частичный ремонт
+							</Button>
+							<Button className={cls.filterCommerceBtn}>
+								Косметический ремонт
+							</Button>
+							<Button className={cls.filterCommerceBtn}>
+								Современный ремонт
+							</Button>
+							<Button className={cls.filterCommerceBtn}>Нет ремонта</Button>
+						</div>
 					</div>
-				</div>
 
-				<div className={cls.filterCommerceItemBlog}>
-					<p className={cls.filterCommerceTitleSquare}>Парковка</p>
-					<div className={cls.filterCommerceGroupBtn}>
-						<Button className={cls.filterCommerceBtn}>Закрытая</Button>
-						<Button className={cls.filterCommerceBtn}>Подземная</Button>
-						<Button className={cls.filterCommerceBtn}>Открытая</Button>
+					<div className={cls.filterCommerceItemBlog}>
+						<p className={cls.filterCommerceTitleSquare}>Парковка</p>
+						<div className={cls.filterCommerceGroupBtn}>
+							<Button className={cls.filterCommerceBtn}>Закрытая</Button>
+							<Button className={cls.filterCommerceBtn}>Подземная</Button>
+							<Button className={cls.filterCommerceBtn}>Открытая</Button>
+						</div>
 					</div>
-				</div>
 
-				<div className={cls.filterCommerceItemBlog}>
-					<p className={cls.filterCommerceTitleSquare}>Мебель</p>
-					<div className={cls.filterCommerceGroupBtn}>
-						<Button className={cls.filterCommerceBtn}>Да</Button>
-						<Button className={cls.filterCommerceBtn}>Нет</Button>
+					<div className={cls.filterCommerceItemBlog}>
+						<p className={cls.filterCommerceTitleSquare}>Мебель</p>
+						<div className={cls.filterCommerceGroupBtn}>
+							<Button className={cls.filterCommerceBtn}>Да</Button>
+							<Button className={cls.filterCommerceBtn}>Нет</Button>
+						</div>
 					</div>
 				</div>
-			</div>
+			)}
 		</div>
 	)
 }

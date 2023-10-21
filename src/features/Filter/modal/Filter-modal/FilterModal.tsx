@@ -1,13 +1,11 @@
+import { getFilterState } from 'entities/filter/model/selectors/getFilterState'
+import { useSelector } from 'react-redux'
 import { Button } from 'shared/ui/button/Button'
 import FilterCommerce from './FilterCommerce/FilterCommerce'
 import FilterFlats from './FilterFlats/FilterFlats'
 import FilterHouse from './FilterHouse/FilterHouse'
 import FilterLocation from './FilterLocation/FilterLocation'
 import cls from './FilterModal.module.scss'
-import { useSelector } from 'react-redux'
-import { getFilterState } from 'entities/filter/model/selectors/getFilterState'
-import { useDispatch } from 'react-redux'
-import { filterActions } from 'entities/filter/model/slice/FilterSlice'
 
 interface FilterModalProps {
 	changeModalState: () => void
@@ -15,7 +13,6 @@ interface FilterModalProps {
 
 const FilterModal = (props: FilterModalProps) => {
 	const { changeModalState } = props
-	const dispatch = useDispatch()
 
 	const { type: typeState } = useSelector(getFilterState)
 

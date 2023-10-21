@@ -13,15 +13,12 @@ const Advertising = () => {
 					<div className={cls.advertItems}>
 						{advertisingData.map((item, index) => (
 							<motion.div
-								initial={
-									index % 2 === 0
-										? { opacity: 0, x: -150 }
-										: { opacity: 0, x: 150 }
-								}
+								initial={{ opacity: 0, x: -20 }}
 								animate={{ opacity: 1, x: 0 }}
-								transition={{ duration: 2 }}
+								exit={{ opacity: 0, x: -20 }}
+								transition={{ duration: 0.5, ease: 'easeOut' }}
 								className={cls.advertItem}
-								key={item.id}
+								key='filterFlatsItem'
 							>
 								<div className={cls.advertImage}>{item.image}</div>
 								<div className={cls.advertInfo}>
