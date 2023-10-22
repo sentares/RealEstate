@@ -5,8 +5,11 @@ import { Input } from 'shared/ui/input/Input'
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { FilterModal } from 'features/Filter/modal'
+import { useNavigate } from 'react-router-dom'
+import { RoutePath } from 'app/providers/router'
 
 const MainFilter = () => {
+	const navigate = useNavigate()
 	const types = [
 		{
 			id: 1,
@@ -35,6 +38,10 @@ const MainFilter = () => {
 
 	function changeModalState() {
 		setOpenFilterModal(!openFilterModal)
+	}
+
+	function handleClickShow() {
+		navigate(RoutePath.realties)
 	}
 
 	return (
@@ -123,6 +130,14 @@ const MainFilter = () => {
 								</div>
 							</div>
 						</div>
+					</div>
+					<div className={cls.actionBlock}>
+						<Button className={cls.createButton} theme={ButtonTheme.TONAL}>
+							Сдать/Продать
+						</Button>
+						<Button onClick={handleClickShow} className={cls.searchButton}>
+							Показать
+						</Button>
 					</div>
 				</motion.div>
 			</div>

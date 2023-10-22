@@ -5,25 +5,25 @@ import Switcher from 'shared/ui/switcher/Switcher'
 import cls from './FilterFlats.module.scss'
 
 interface FilterFlatsProps {
-	typeState: boolean
+	realtyType: boolean
 }
 
 const FilterFlats = (props: FilterFlatsProps) => {
-	const { typeState } = props
+	const { realtyType } = props
 
 	const dispatch = useDispatch()
 
 	function changeToggleFlats() {
-		dispatch(filterActions.setTypeFlat(!typeState))
+		dispatch(filterActions.setTypeFlat(!realtyType))
 	}
 
 	return (
 		<div className={cls.filterFlats}>
 			<div className={cls.filterFlatsTitle}>
 				Квартиры
-				<Switcher isOn={typeState} onToggle={changeToggleFlats} id='flat' />
+				<Switcher isOn={realtyType} onToggle={changeToggleFlats} id='flat' />
 			</div>
-			{typeState && (
+			{realtyType && (
 				<div className={cls.filterFlatsWrapper}>
 					<div className={cls.filterFlatsSquare}>
 						<p className={cls.filterFlatsTitleSquare}>Площадь</p>

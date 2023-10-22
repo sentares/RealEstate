@@ -4,18 +4,19 @@ import { Button } from 'shared/ui/button/Button'
 import { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { filterActions } from 'entities/filter/model/slice/FilterSlice'
+import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch'
 
 interface FilterCommerceProps {
-	typeState: boolean
+	realtyType: boolean
 }
 
 const FilterCommerce = (props: FilterCommerceProps) => {
-	const { typeState } = props
+	const { realtyType } = props
 
-	const dispatch = useDispatch()
+	const dispatch = useAppDispatch()
 
 	function changeToggleCommerce() {
-		dispatch(filterActions.setTypeCommerce(!typeState))
+		dispatch(filterActions.setTypeCommerce(!realtyType))
 	}
 
 	return (
@@ -23,12 +24,12 @@ const FilterCommerce = (props: FilterCommerceProps) => {
 			<div className={cls.filterCommerceTitle}>
 				Коммерческое
 				<Switcher
-					isOn={typeState}
+					isOn={realtyType}
 					onToggle={changeToggleCommerce}
 					id='commerce'
 				/>
 			</div>
-			{typeState && (
+			{realtyType && (
 				<div className={cls.filterCommerceWrapper}>
 					<div className={cls.filterCommerceSquare}>
 						<p className={cls.filterCommerceTitleSquare}>Площадь</p>

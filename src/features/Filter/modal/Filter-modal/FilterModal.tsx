@@ -1,5 +1,8 @@
+import { filterTitileEnum } from 'entities/filter'
 import { getFilterState } from 'entities/filter/model/selectors/getFilterState'
+import { changeCellType } from 'entities/filter/model/slice/FilterSlice'
 import { useSelector } from 'react-redux'
+import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch'
 import { Button } from 'shared/ui/button/Button'
 import FilterCommerce from './FilterCommerce/FilterCommerce'
 import FilterFlats from './FilterFlats/FilterFlats'
@@ -13,14 +16,14 @@ interface FilterModalProps {
 
 const FilterModal = (props: FilterModalProps) => {
 	const { changeModalState } = props
+	const dispatch = useAppDispatch()
 
-	const { type: typeState } = useSelector(getFilterState)
+	const { realtyType, cellType } = useSelector(getFilterState)
+	const cellTypeArray = Object.values(cellType)
 
-	const cellTypes = [
-		{ id: 1, title: 'Аренда', active: false },
-		{ id: 2, title: 'Продажа', active: false },
-		{ id: 3, title: 'Все', active: true },
-	]
+	const handleClickCellType = (filterTitle: filterTitileEnum) => {
+		dispatch(changeCellType(filterTitle))
+	}
 
 	return (
 		<section className={cls.filterModal}>
@@ -47,9 +50,10 @@ const FilterModal = (props: FilterModalProps) => {
 					</div>
 				</div>
 				<div className={cls.filterCellType}>
-					{cellTypes.map(cellType => (
+					{cellTypeArray.map(cellType => (
 						<div
-							key={cellType.id}
+							onClick={handleClickCellType.bind(null, cellType.title)}
+							key={cellType.title}
 							className={`${cls.singleCellType} ${
 								cellType.active ? cls.activeCellType : ''
 							}`}
@@ -68,9 +72,9 @@ const FilterModal = (props: FilterModalProps) => {
 						</div>
 					))}
 				</div>
-				<FilterFlats typeState={typeState.flat} />
-				<FilterHouse typeState={typeState.house} />
-				<FilterCommerce typeState={typeState.commerce} />
+				<FilterFlats realtyType={realtyType.flat} />
+				<FilterHouse realtyType={realtyType.house} />
+				<FilterCommerce realtyType={realtyType.commerce} />
 				<FilterLocation />
 				<div className={cls.filterLocationShowBtn}>
 					<Button className={cls.filterBtn}>Показать</Button>

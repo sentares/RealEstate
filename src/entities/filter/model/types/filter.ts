@@ -3,8 +3,30 @@ export interface ITypeRealty {
 	flat: boolean
 	commerce: boolean
 }
+
+export enum filterTitileEnum {
+	CELL = 'Продажа',
+	RENT = 'Аренда',
+	ALL = 'Все',
+}
+
+export interface ITypeCell {
+	cell: {
+		title: string
+		active: boolean
+	}
+	rent: {
+		title: string
+		active: boolean
+	}
+	all: {
+		title: string
+		active: boolean
+	}
+}
 export interface IFilter {
-	type: ITypeRealty
+	realtyType: ITypeRealty
+	cellType: ITypeCell
 }
 
 export interface FilterSchema {

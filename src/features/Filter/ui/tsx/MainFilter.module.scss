@@ -9,6 +9,7 @@
 	justify-content: center;
 	align-items: center;
 	gap: 32px;
+
 	h1 {
 		width: 566px;
 		color: var(--background-main-bg, #fff);
@@ -20,10 +21,29 @@
 		line-height: 44px; /* 122.222% */
 	}
 	.filterBlock {
+		position: relative;
 		max-width: 920px;
 		width: 100%;
 		background: var(--bg-color);
 		border-radius: 8px;
+		.actionBlock {
+			position: absolute;
+			bottom: -58px;
+			right: 0px;
+			display: flex;
+			align-items: center;
+			gap: 20px;
+			.createButton {
+				padding: 10px 24px;
+				border-radius: 24px;
+			}
+			.searchButton {
+				padding: 10px 24px;
+				background: var(--primary-color);
+				color: #fff;
+				border: none;
+			}
+		}
 		.typeBlock {
 			display: flex;
 			justify-content: center;

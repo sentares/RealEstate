@@ -6,25 +6,25 @@ import { useDispatch } from 'react-redux'
 import { filterActions } from 'entities/filter/model/slice/FilterSlice'
 
 interface FilterHouseProps {
-	typeState: boolean
+	realtyType: boolean
 }
 
 const FilterHouse = (props: FilterHouseProps) => {
-	const { typeState } = props
+	const { realtyType } = props
 
 	const dispatch = useDispatch()
 
 	function changeToggleHouse() {
-		dispatch(filterActions.setTypeHouse(!typeState))
+		dispatch(filterActions.setTypeHouse(!realtyType))
 	}
 
 	return (
 		<div className={cls.filterHouse}>
 			<div className={cls.filterFlatsTitle}>
 				Дом
-				<Switcher isOn={typeState} onToggle={changeToggleHouse} id='house' />
+				<Switcher isOn={realtyType} onToggle={changeToggleHouse} id='house' />
 			</div>
-			{typeState && (
+			{realtyType && (
 				<div className={cls.filterFlatsWrapper}>
 					<div className={cls.filterFlatsSquare}>
 						<h5 className={cls.filterFlatsTitleSquare}>Год постройки</h5>

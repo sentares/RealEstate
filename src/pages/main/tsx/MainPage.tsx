@@ -18,7 +18,7 @@ const Main = () => {
 	}
 
 	useEffect(() => {
-		// getData()
+		getData()
 	}, [])
 
 	return (
