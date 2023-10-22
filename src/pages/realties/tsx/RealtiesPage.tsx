@@ -1,6 +1,5 @@
-import { getRealtyService, realtyReducer } from 'entities/realty'
-import { getRealty } from 'entities/realty/selectors/getRealty'
-import { realpath } from 'fs'
+import { getRealtyService, realtyReducer, realtyState } from 'entities/realty'
+
 import { useEffect } from 'react'
 import { useSelector } from 'react-redux'
 import {
@@ -16,7 +15,8 @@ const initialReducers: ReducersList = {
 const RealtiesPage = () => {
 	const dispatch = useAppDispatch()
 
-	const data = useSelector(getRealty)
+	const data = useSelector(realtyState)
+
 	useEffect(() => {
 		dispatch(getRealtyService(null))
 	}, [])

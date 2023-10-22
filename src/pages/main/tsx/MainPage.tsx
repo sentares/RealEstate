@@ -10,16 +10,16 @@ import Advertising from 'widgets/Advertising/Advertising'
 import cls from './MainPage.module.scss'
 
 const Main = () => {
-	const getData = async () => {
-		const response = await axios.get(
-			'https://realty-deal.onrender.com/real-estate'
-		)
-		console.log(response)
-	}
+	// const getData = async () => {
+	// 	const response = await axios.get(
+	// 		'https://realty-deal.onrender.com/real-estate'
+	// 	)
+	// 	console.log(response)
+	// }
 
-	useEffect(() => {
-		getData()
-	}, [])
+	// useEffect(() => {
+	// 	getData()
+	// }, [])
 
 	return (
 		<div className={cls.main}>

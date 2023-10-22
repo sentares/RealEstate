@@ -18,7 +18,7 @@ const Advertising = () => {
 								exit={{ opacity: 0, x: -20 }}
 								transition={{ duration: 0.5, ease: 'easeOut' }}
 								className={cls.advertItem}
-								key='filterFlatsItem'
+								key={item.id}
 							>
 								<div className={cls.advertImage}>{item.image}</div>
 								<div className={cls.advertInfo}>

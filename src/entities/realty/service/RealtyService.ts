@@ -13,8 +13,6 @@ export const getRealtyService = createAsyncThunk<
 	try {
 		const response = await extra.api.get('/real-estate/')
 
-		// dispatch(realtyActions.setData(response.data))
-
 		return response.data
 	} catch (e) {
 		return rejectWithValue('error')
