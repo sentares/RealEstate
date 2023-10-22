@@ -1,15 +1,14 @@
-import { FilterIcon } from 'shared/images'
-import { Button, ButtonTheme } from 'shared/ui/button/Button'
-import cls from './MainFilter.module.scss'
-import { Input } from 'shared/ui/input/Input'
-import { useState } from 'react'
-import { motion } from 'framer-motion'
-import { FilterModal } from 'features/Filter/modal'
-import { useNavigate } from 'react-router-dom'
 import { RoutePath } from 'app/providers/router'
+import { FilterModal } from 'features/Filter/modal'
+import { motion } from 'framer-motion'
+import { useState } from 'react'
+import { FilterIcon } from 'shared/images'
+import { AppLink } from 'shared/ui/appLink/AppLink'
+import { Button, ButtonTheme } from 'shared/ui/button/Button'
+import { Input } from 'shared/ui/input/Input'
+import cls from './MainFilter.module.scss'
 
 const MainFilter = () => {
-	const navigate = useNavigate()
 	const types = [
 		{
 			id: 1,
@@ -38,10 +37,6 @@ const MainFilter = () => {
 
 	function changeModalState() {
 		setOpenFilterModal(!openFilterModal)
-	}
-
-	function handleClickShow() {
-		navigate(RoutePath.realties)
 	}
 
 	return (
@@ -135,9 +130,9 @@ const MainFilter = () => {
 						<Button className={cls.createButton} theme={ButtonTheme.TONAL}>
 							Сдать/Продать
 						</Button>
-						<Button onClick={handleClickShow} className={cls.searchButton}>
-							Показать
-						</Button>
+						<AppLink to={`${RoutePath.realties}`}>
+							<Button className={cls.searchButton}>Показать</Button>
+						</AppLink>
 					</div>
 				</motion.div>
 			</div>

@@ -1,8 +1,6 @@
-import axios from 'axios'
 import MainFilter from 'features/Filter/ui/tsx/MainFilter'
 import { DefCard } from 'features/RealtyCard'
 import SearchByMap from 'features/SearchMap/tsx/SearchCart'
-import { useEffect } from 'react'
 import AdBlock from 'shared/blocks/adBlock/AdBlock'
 import NewsBlock from 'shared/blocks/newsBlock/NewsBlock'
 import { ThemeSwitcher } from 'shared/switchers/theme-switcher/ThemeSwitcher'

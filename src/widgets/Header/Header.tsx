@@ -1,11 +1,12 @@
-import { ChevronDown, Heart, MapPin, Plus, UserCircle2 } from 'lucide-react'
-import { Link } from 'react-router-dom'
-import { Button, ButtonSize, ButtonTheme } from 'shared/ui/button/Button'
-import cls from './Header.module.scss'
+import { RoutePath } from 'app/providers/router'
+import { Heart, MapPin, Plus, UserCircle2 } from 'lucide-react'
 import LangSwitcher, {
 	LangSwitcherTypeEnum,
 } from 'shared/switchers/language-switcher/LanguageSwitcher'
+import { AppLink } from 'shared/ui/appLink/AppLink'
+import { Button, ButtonSize, ButtonTheme } from 'shared/ui/button/Button'
 import Container from 'widgets/Container/Container'
+import cls from './Header.module.scss'
 
 const Header = () => {
 	return (
@@ -13,11 +14,11 @@ const Header = () => {
 			<Container>
 				<div className={cls.headerItems}>
 					<div className={cls.headerRight}>
-						<Link to={'/'}>
+						<AppLink to={`${RoutePath.main}`}>
 							<h2 className={cls.headerLogo}>Logo</h2>
-						</Link>
+						</AppLink>
 
-						<Link to={'#'}>
+						<AppLink to={`#`}>
 							<Button
 								className={cls.headerBut}
 								theme={ButtonTheme.OUTLINE}
@@ -26,7 +27,7 @@ const Header = () => {
 								<MapPin />
 								<p>Бишкек</p>
 							</Button>
-						</Link>
+						</AppLink>
 					</div>
 
 					<div className={cls.headerLeft}>
