@@ -15,11 +15,11 @@ import { CombinedState } from 'redux'
 
 export interface StateSchema {
 	user: UserSchema
-	realty: RealtySchema
 	filter: FilterSchema
 
 	loginForm?: LoginSchema
 	profile?: ProfileSchema
+	realty?: RealtySchema
 }
 
 export type StateSchemaKey = keyof StateSchema

@@ -37,7 +37,7 @@ export interface IRealty {
 }
 
 export interface RealtySchema {
-	realtyArr?: IRealty[]
-	// isLoading?: boolean
-	// error?: string
+	realtyArr?: IRealty[] | null
+	isLoading?: boolean
+	error?: string
 }
