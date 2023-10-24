@@ -1,13 +1,11 @@
-import Switcher from 'shared/ui/switcher/Switcher'
-import cls from './FilterCommerce.module.scss'
-import { Button } from 'shared/ui/button/Button'
-import { useState } from 'react'
-import { useDispatch } from 'react-redux'
 import { filterActions } from 'entities/filter/model/slice/FilterSlice'
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch'
+import { Button } from 'shared/ui/button/Button'
+import Switcher from 'shared/ui/switcher/Switcher'
+import cls from './FilterCommerce.module.scss'
 
 interface FilterCommerceProps {
-	realtyType: boolean
+	realtyType: { active: boolean; name: string }
 }
 
 const FilterCommerce = (props: FilterCommerceProps) => {
@@ -16,7 +14,7 @@ const FilterCommerce = (props: FilterCommerceProps) => {
 	const dispatch = useAppDispatch()
 
 	function changeToggleCommerce() {
-		dispatch(filterActions.setTypeCommerce(!realtyType))
+		dispatch(filterActions.setTypeCommercial(!realtyType.active))
 	}
 
 	return (
@@ -24,12 +22,12 @@ const FilterCommerce = (props: FilterCommerceProps) => {
 			<div className={cls.filterCommerceTitle}>
 				Коммерческое
 				<Switcher
-					isOn={realtyType}
+					isOn={realtyType.active}
 					onToggle={changeToggleCommerce}
 					id='commerce'
 				/>
 			</div>
-			{realtyType && (
+			{realtyType.active && (
 				<div className={cls.filterCommerceWrapper}>
 					<div className={cls.filterCommerceSquare}>
 						<p className={cls.filterCommerceTitleSquare}>Площадь</p>

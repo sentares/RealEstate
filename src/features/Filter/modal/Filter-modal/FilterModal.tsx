@@ -72,9 +72,9 @@ const FilterModal = (props: FilterModalProps) => {
 						</div>
 					))}
 				</div>
-				<FilterFlats realtyType={realtyType.flat} />
+				<FilterFlats realtyType={realtyType.apartment} />
 				<FilterHouse realtyType={realtyType.house} />
-				<FilterCommerce realtyType={realtyType.commerce} />
+				<FilterCommerce realtyType={realtyType.commercial} />
 				<FilterLocation />
 				<div className={cls.filterLocationShowBtn}>
 					<Button className={cls.filterBtn}>Показать</Button>

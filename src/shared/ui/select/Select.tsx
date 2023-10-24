@@ -4,8 +4,8 @@ import { Mods, classNames } from 'shared/lib/classNames/classNames'
 import { ChevronDown, XCircle } from 'lucide-react'
 
 export interface Option {
-	id: number | null
-	name: string
+	id?: number | null
+	name?: string
 	short?: string
 }
 

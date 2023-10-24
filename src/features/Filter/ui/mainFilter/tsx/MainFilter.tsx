@@ -1,12 +1,17 @@
 import { RoutePath } from 'app/providers/router'
+import { getFilterState } from 'entities/filter/model/selectors/getFilterState'
+import { changeRealtyType } from 'entities/filter/model/slice/FilterSlice'
 import { FilterModal } from 'features/Filter/modal'
 import { motion } from 'framer-motion'
 import { useState } from 'react'
+import { useSelector } from 'react-redux'
 import { FilterIcon } from 'shared/images'
+import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch'
 import { AppLink } from 'shared/ui/appLink/AppLink'
 import { Button, ButtonTheme } from 'shared/ui/button/Button'
 import { Input } from 'shared/ui/input/Input'
 import cls from './MainFilter.module.scss'
+import { getRealtyService } from 'entities/realty'
 
 const MainFilter = () => {
 	const types = [
@@ -31,12 +36,31 @@ const MainFilter = () => {
 	const [activeType, setActiveType] = useState(1)
 	const [openFilterModal, setOpenFilterModal] = useState(false)
 
+	const dispatch = useAppDispatch()
+
+	const { cellType, realtyType } = useSelector(getFilterState)
+	const realtyTypeEntries = Object.entries(realtyType)
+
+	const realtyTypeArr = realtyTypeEntries.map(([key, value]) => ({
+		key,
+		active: value.active,
+		name: value.name,
+	}))
+
 	function changeActiveType(id: number) {
 		setActiveType(id)
 	}
 
 	function changeModalState() {
 		setOpenFilterModal(!openFilterModal)
+	}
+
+	function handleClickRealtyType(key: string, isActive: boolean) {
+		dispatch(changeRealtyType(key, isActive))
+	}
+
+	function handleShowRealty() {
+		// dispatch(getRealtyService(null))
 	}
 
 	return (
@@ -72,15 +96,23 @@ const MainFilter = () => {
 					</div>
 					<div className={cls.sortBlock}>
 						<div className={cls.firstCategory}>
-							<Button className={cls.catButn}>Квартира</Button>
-							<Button className={cls.catButn} theme={ButtonTheme.TONAL}>
-								Дом
-							</Button>
-							<Button className={cls.catButn}>Коммерческая недвижимость</Button>
-							<Button className={cls.catButn}>Участок</Button>
-							<Button className={cls.catButn}>Дача</Button>
-							<Button className={cls.catButn}>Гараж</Button>
-							<Button className={cls.catButn}>Машиноместо</Button>
+							{realtyTypeArr.length &&
+								realtyTypeArr.map(item => (
+									<Button
+										key={item.key}
+										className={cls.catButn}
+										theme={
+											item.active ? ButtonTheme.TONAL : ButtonTheme.OUTLINE
+										}
+										onClick={handleClickRealtyType.bind(
+											null,
+											item.key,
+											item.active
+										)}
+									>
+										{item.name}
+									</Button>
+								))}
 							<Button theme={ButtonTheme.TEXT} onClick={changeModalState}>
 								<FilterIcon className={cls.filterIcon} />
 							</Button>
@@ -131,7 +163,9 @@ const MainFilter = () => {
 							Сдать/Продать
 						</Button>
 						<AppLink to={`${RoutePath.realties}`}>
-							<Button className={cls.searchButton}>Показать</Button>
+							<Button className={cls.searchButton} onClick={handleShowRealty}>
+								Показать
+							</Button>
 						</AppLink>
 					</div>
 				</motion.div>

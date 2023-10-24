@@ -5,7 +5,7 @@ import Switcher from 'shared/ui/switcher/Switcher'
 import cls from './FilterFlats.module.scss'
 
 interface FilterFlatsProps {
-	realtyType: boolean
+	realtyType: { active: boolean; name: string }
 }
 
 const FilterFlats = (props: FilterFlatsProps) => {
@@ -14,16 +14,20 @@ const FilterFlats = (props: FilterFlatsProps) => {
 	const dispatch = useDispatch()
 
 	function changeToggleFlats() {
-		dispatch(filterActions.setTypeFlat(!realtyType))
+		dispatch(filterActions.setTypeApartment(!realtyType.active))
 	}
 
 	return (
 		<div className={cls.filterFlats}>
 			<div className={cls.filterFlatsTitle}>
 				Квартиры
-				<Switcher isOn={realtyType} onToggle={changeToggleFlats} id='flat' />
+				<Switcher
+					isOn={realtyType.active}
+					onToggle={changeToggleFlats}
+					id='flat'
+				/>
 			</div>
-			{realtyType && (
+			{realtyType.active && (
 				<div className={cls.filterFlatsWrapper}>
 					<div className={cls.filterFlatsSquare}>
 						<p className={cls.filterFlatsTitleSquare}>Площадь</p>

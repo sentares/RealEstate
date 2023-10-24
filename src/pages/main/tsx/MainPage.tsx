@@ -1,4 +1,4 @@
-import MainFilter from 'features/Filter/ui/tsx/MainFilter'
+import { MainFilter } from 'features/Filter'
 import { DefCard } from 'features/RealtyCard'
 import SearchByMap from 'features/SearchMap/tsx/SearchCart'
 import AdBlock from 'shared/blocks/adBlock/AdBlock'
@@ -6,7 +6,8 @@ import NewsBlock from 'shared/blocks/newsBlock/NewsBlock'
 import { ThemeSwitcher } from 'shared/switchers/theme-switcher/ThemeSwitcher'
 import Advertising from 'widgets/Advertising/Advertising'
 import cls from './MainPage.module.scss'
-import InfoCard from 'features/RealtyCard/ui/tsx/InfoCard/InfoCard'
+import { useSelector } from 'react-redux'
+import { realtyState } from 'entities/realty'
 
 const Main = () => {
 	return (

@@ -1,12 +1,11 @@
-import { useState } from 'react'
+import { filterActions } from 'entities/filter/model/slice/FilterSlice'
+import { useDispatch } from 'react-redux'
 import { Button } from 'shared/ui/button/Button'
 import Switcher from 'shared/ui/switcher/Switcher'
 import cls from './FilterHouse.module.scss'
-import { useDispatch } from 'react-redux'
-import { filterActions } from 'entities/filter/model/slice/FilterSlice'
 
 interface FilterHouseProps {
-	realtyType: boolean
+	realtyType: { active: boolean; name: string }
 }
 
 const FilterHouse = (props: FilterHouseProps) => {
@@ -15,16 +14,20 @@ const FilterHouse = (props: FilterHouseProps) => {
 	const dispatch = useDispatch()
 
 	function changeToggleHouse() {
-		dispatch(filterActions.setTypeHouse(!realtyType))
+		dispatch(filterActions.setTypeHouse(!realtyType.active))
 	}
 
 	return (
 		<div className={cls.filterHouse}>
 			<div className={cls.filterFlatsTitle}>
 				Дом
-				<Switcher isOn={realtyType} onToggle={changeToggleHouse} id='house' />
+				<Switcher
+					isOn={realtyType.active}
+					onToggle={changeToggleHouse}
+					id='house'
+				/>
 			</div>
-			{realtyType && (
+			{realtyType.active && (
 				<div className={cls.filterFlatsWrapper}>
 					<div className={cls.filterFlatsSquare}>
 						<h5 className={cls.filterFlatsTitleSquare}>Год постройки</h5>

@@ -1,7 +1,10 @@
 export interface ITypeRealty {
-	house: boolean
-	flat: boolean
-	commerce: boolean
+	house: { active: boolean; name: string }
+	apartment: { active: boolean; name: string }
+	commercial: { active: boolean; name: string }
+	plot: { active: boolean; name: string }
+	сountry_house: { active: boolean; name: string }
+	garage: { active: boolean; name: string }
 }
 
 export enum filterTitileEnum {

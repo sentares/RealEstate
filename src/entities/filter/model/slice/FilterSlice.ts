@@ -6,9 +6,12 @@ const initialState: FilterSchema = {
 	readonly: false,
 	data: {
 		realtyType: {
-			house: false,
-			flat: false,
-			commerce: false,
+			house: { active: false, name: 'Дом' },
+			apartment: { active: false, name: 'Квартира' },
+			commercial: { active: false, name: 'Коммерческая недвижимость' },
+			plot: { active: false, name: 'Участок' },
+			сountry_house: { active: false, name: 'Дача' },
+			garage: { active: false, name: 'Гараж' },
 		},
 		cellType: {
 			cell: { title: 'Продажа', active: false },
@@ -29,15 +32,25 @@ export const filterSlice = createSlice({
 		setLoading: state => {
 			state.isLoading = true
 		},
+
 		//RealtyType
 		setTypeHouse: (state, action: PayloadAction<boolean>) => {
-			state.data.realtyType.house = action.payload
+			state.data.realtyType.house.active = action.payload
 		},
-		setTypeFlat: (state, action: PayloadAction<boolean>) => {
-			state.data.realtyType.flat = action.payload
+		setTypeApartment: (state, action: PayloadAction<boolean>) => {
+			state.data.realtyType.apartment.active = action.payload
 		},
-		setTypeCommerce: (state, action: PayloadAction<boolean>) => {
-			state.data.realtyType.commerce = action.payload
+		setTypeCommercial: (state, action: PayloadAction<boolean>) => {
+			state.data.realtyType.commercial.active = action.payload
+		},
+		setTypePlot: (state, action: PayloadAction<boolean>) => {
+			state.data.realtyType.plot.active = action.payload
+		},
+		setTypeCountryHouse: (state, action: PayloadAction<boolean>) => {
+			state.data.realtyType.сountry_house.active = action.payload
+		},
+		setTypeGarage: (state, action: PayloadAction<boolean>) => {
+			state.data.realtyType.garage.active = action.payload
 		},
 
 		//CellType
@@ -80,5 +93,32 @@ export const changeCellType =
 			}
 		} catch (e) {
 			dispatch(filterActions.setError(`${e}`))
+		}
+	}
+
+export const changeRealtyType =
+	(key: string, isActive: boolean) => async (dispatch: Function) => {
+		switch (key) {
+			case 'house':
+				dispatch(filterActions.setTypeHouse(!isActive))
+				break
+			case 'apartment':
+				dispatch(filterActions.setTypeApartment(!isActive))
+				break
+			case 'commercial':
+				dispatch(filterActions.setTypeCommercial(!isActive))
+				break
+			case 'сountry_house':
+				dispatch(filterActions.setTypeCountryHouse(!isActive))
+				break
+			case 'plot':
+				dispatch(filterActions.setTypePlot(!isActive))
+				break
+			case 'garage':
+				dispatch(filterActions.setTypeGarage(!isActive))
+
+				break
+			default:
+				break
 		}
 	}
