@@ -1,4 +1,5 @@
 import { getRealtyService, realtyReducer, realtyState } from 'entities/realty'
+import InfoCard from 'features/RealtyCard/ui/tsx/InfoCard/InfoCard'
 
 import { useEffect } from 'react'
 import { useSelector } from 'react-redux'
@@ -7,6 +8,7 @@ import {
 	ReducersList,
 } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch'
+import cls from './RealtiesPage.module.scss'
 
 const initialReducers: ReducersList = {
 	realty: realtyReducer,
@@ -19,13 +21,15 @@ const RealtiesPage = () => {
 
 	useEffect(() => {
 		dispatch(getRealtyService(null))
+		window.scrollTo(0, 0)
 	}, [])
-
-	console.log(data)
 
 	return (
 		<DynamicModuleLoader removeAfterUnmount reducers={initialReducers}>
-			<div>RealtiesPage</div>
+			<div className={cls.realtiesPage}>
+				{data &&
+					data.map(realty => <InfoCard key={realty.id} realty={realty} />)}
+			</div>
 		</DynamicModuleLoader>
 	)
 }

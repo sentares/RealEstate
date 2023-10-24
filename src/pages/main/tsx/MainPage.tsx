@@ -6,19 +6,9 @@ import NewsBlock from 'shared/blocks/newsBlock/NewsBlock'
 import { ThemeSwitcher } from 'shared/switchers/theme-switcher/ThemeSwitcher'
 import Advertising from 'widgets/Advertising/Advertising'
 import cls from './MainPage.module.scss'
+import InfoCard from 'features/RealtyCard/ui/tsx/InfoCard/InfoCard'
 
 const Main = () => {
-	// const getData = async () => {
-	// 	const response = await axios.get(
-	// 		'https://realty-deal.onrender.com/real-estate'
-	// 	)
-	// 	console.log(response)
-	// }
-
-	// useEffect(() => {
-	// 	getData()
-	// }, [])
-
 	return (
 		<div className={cls.main}>
 			<MainFilter />

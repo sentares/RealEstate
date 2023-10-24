@@ -12,6 +12,9 @@ import { ReactComponent as AdvertBlog1 } from './advertising1.svg'
 import { ReactComponent as AdvertBlog2 } from './advertising2.svg'
 import { ReactComponent as AdvertBlog3 } from './advertising3.svg'
 import { ReactComponent as AdvertBg } from './AdvertisingBg.svg'
+import { ReactComponent as ImgInfo } from './imgInfo.svg'
+import { ReactComponent as Fire } from './fire.svg'
+
 
 export {
 	AppStoreSVG,
@@ -28,4 +31,6 @@ export {
 	AdvertBlog2,
 	AdvertBlog3,
 	AdvertBg,
+	ImgInfo,
+	Fire
 }
