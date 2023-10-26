@@ -41,6 +41,8 @@ const MainFilter = () => {
 	const { cellType, realtyType } = useSelector(getFilterState)
 	const realtyTypeEntries = Object.entries(realtyType)
 
+	console.log(cellType)
+
 	const realtyTypeArr = realtyTypeEntries.map(([key, value]) => ({
 		key,
 		active: value.active,

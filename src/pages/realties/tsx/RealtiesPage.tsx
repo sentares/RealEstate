@@ -1,11 +1,12 @@
+import { getFilterState } from 'entities/filter/model/selectors/getFilterState'
 import {
 	getRealtyService,
 	realtyReducer,
 	realtyState,
 	realtyStateLoading,
 } from 'entities/realty'
+import { SmallFilter } from 'features/Filter'
 import InfoCard from 'features/RealtyCard/ui/tsx/InfoCard/InfoCard'
-
 import { useEffect } from 'react'
 import { useSelector } from 'react-redux'
 import {
@@ -14,8 +15,6 @@ import {
 } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch'
 import cls from './RealtiesPage.module.scss'
-import { SmallFilter } from 'features/Filter'
-import { getFilterState } from 'entities/filter/model/selectors/getFilterState'
 
 const initialReducers: ReducersList = {
 	realty: realtyReducer,
