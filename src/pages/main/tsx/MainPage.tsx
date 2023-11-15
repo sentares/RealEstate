@@ -19,7 +19,7 @@ const Main = () => {
 			<div className={cls.lenta}>
 				<div className={cls.cardAndNews}>
 					<div className={cls.cardBlock}>
-						<h2>Интересные предложения</h2>
+						<h2>Интересные предложения для вас</h2>
 						<div className={cls.cards}>
 							<DefCard />
 							<DefCard />
